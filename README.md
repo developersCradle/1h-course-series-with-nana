@@ -9,8 +9,8 @@ Tasks and notes from crash course.
 ## Video progress
 
 - [x] [Section 01](#) - Intro and Course Overview
-- [ ] [Section 02](#) - What is Docker?
-- [ ] [Section 03](#) - What problems Docker solves in development and deployment process
+- [x] [Section 02](#) - What is Docker?
+- [x] [Section 03](#) - What problems Docker solves in development and deployment process
 - [ ] [Section 04](#) - Virtual Machine vs Docker
 - [ ] [Section 05](#) - Install Docker
 - [ ] [Section 06](#)- Docker Images vs Containers
@@ -26,22 +26,39 @@ Tasks and notes from crash course.
 - [ ] [Section 16](#) - Overview: Docker in complete software development lifecycle
 - [ ] [Section 17](#) - Where to go from here
 
-### Notes
+#### What is docker
 
-
-
- - Before containers, every developers needed to install their own setups of tools for their spesific needs.
-    - Os spesific
-    - Configuration spesific
+ - Before containers, all developers needed to install their own setups of tools for their specific needs.
+    - Os specific
+    - Configuration specific
     - Etc
+
+#### Development/Deployment with Docker 
 
 <img src="dockerDevelopementProcess.JPG" alt="alt text" width="500"/>
 
-1. All these depencyes are inside container. 
-2. As **developer** you just need to execute **one docker command** and get **docker container package** `docker run postgres`
+1. All these decencies are inside container. 
+2. As **developer,** you just need to execute **one docker command** and get **docker container package** `docker run postgres`
 
 - Docker standardizes process of running any service on any local dev environment
-    - More time for developement than setting up configuration
-    - With docker you can have same service running on local device whiout any conflict 
+    - More time for development than setting up configuration
+    - With docker you can have same service running on local device whiteout any conflict 
 
-7:40
+<img src="deploymentProcessWithConainers.JPG" alt="alt text" width="500"/>
+
+- With containers → DevOps team just needs to fetch and run **Docker artifact**
+
+#### Virtual Machine vs Docker
+
+-  Docker virtualize **OS Application Layer**
+- Virtual machine virtualizes
+**OS Application Layer** and **OS kernel** → Meaning virtualizes **complete operating system**
+
+- What it means:
+    - Docker image is, a couple of **MB**
+    - Dockers container takes **seconds** to start
+    - Vm images, a couple of **GB**
+    - Vm takes **minutes** to start
+    - Vm is running with all **OS**
+
+15:00
