@@ -17,10 +17,10 @@ Tasks and notes from crash course.
 - [x] [Section 07](#) - Docker Registries
 - [x] [Section 08](#) - Docker Image Versions
 - [x] [Section 09](#) - Main Docker Commands - Pull and Run Docker containers
-- [ ] [Section 10](#) - Port Binding
-- [ ] [Section 11](#) - Start and Stop containers
-- [ ] [Section 12](#) - Private Docker Registries
-- [ ] [Section 13](#) - Registry vs Repository
+- [x] [Section 10](#) - Port Binding
+- [x] [Section 11](#) - Start and Stop containers
+- [x] [Section 12](#) - Private Docker Registries
+- [x] [Section 13](#) - Registry vs Repository
 - [ ] [Section 14](#) - Dockerfile - Dockerize Node.js app
 - [ ] [Section 15](#) - Build Image
 - [ ] [Section 16](#) - Docker UI Client
@@ -127,3 +127,86 @@ Tasks and notes from crash course.
 <img src="dockerRun.JPG" alt="alt text" width="400"/>
 
 ### Port Binding
+
+<img src="portBinding.JPG" alt="alt text" width="400"/>
+
+- We need to **expose** container **ports**
+    - This is done with **Port Binding** 
+
+<img src="runningInport.JPG" alt="alt text" width="500"/>
+
+- You can see what ports containers are running in
+
+<img src="exposingImageToLocalHostPorts.JPG" alt="alt text" width="300"/>
+
+1. Port inside container
+2. Exposing port to local host
+
+- We can expose ports to localhost when creating container with special **flag**
+
+<img src="dockerStop.JPG" alt="alt text" width="300"/>
+
+<br>
+
+<img src="dockerpublish.JPG" alt="alt text" width="300"/>
+
+- We can publish ports when creating image with **flag** 
+
+`docker run -d -p 9000:80 nginx:1.23`
+
+<img src="dockerpublish.JPG" alt="alt text" width="300"/>
+
+- With following port structure
+
+<img src="portStructure.JPG" alt="alt text" width="300"/>
+
+<br>
+
+<img src="afterRunningContainerWithHostInformation.JPG" alt="alt text" width="500"/>
+
+1. After running with opening with following ports
+    - We can see what is being mapped on 
+
+<br>
+
+- Now we can see its deployed into port 9000
+
+<img src="deployedInto9000.JPG" alt="alt text" width="500"/>
+
+- To expose logs from docker 
+    - `docker logs 6cb988ce6e05`, where last one is docker id
+
+- It's standard to bind same port into container and which is exposed outside of container
+
+### Start and Stop containers
+
+- Docker run always creates new container
+
+- To see all container which docker have created. You can use 
+
+`docker ps -a`
+- To start container you can use `docker start {container} = start one or more stopped containers`. Example `docker logs 6cb988ce6e05`
+
+### Private Docker Registries
+
+- When companies, creates their own public private docker registries.
+
+### Registry vs Repository
+
+<br>
+
+<img src="registeryVsRepository.JPG" alt="alt text" width="700"/>
+
+### Dockerfile - Dockerize Node.js app
+
+- We want to build our docker image, when our application version is finished
+    - We do this by writing "defination" how to build image
+        - This is called **docker file**
+
+<img src="dockerBaseImage.JPG" alt="alt text" width="700"/>
+
+
+- This 
+
+
+52
