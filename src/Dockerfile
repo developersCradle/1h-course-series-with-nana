@@ -1,12 +1,12 @@
 FROM node:19-alpine
 
-COPY package.json /app/
-COPY src /app/
+COPY pacakage.json /app/
+COPY src /app/ 
 
 # COPY src /app/, last / is important. Docker will create new folder if there is no 
 
 WORKDIR /app
 
-RUN npm install
+RUN npn install
 
 CMD ["node", "server.js"]

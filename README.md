@@ -21,11 +21,11 @@ Tasks and notes from crash course.
 - [x] [Section 11](#) - Start and Stop containers
 - [x] [Section 12](#) - Private Docker Registries
 - [x] [Section 13](#) - Registry vs Repository
-- [ ] [Section 14](#) - Dockerfile - Dockerize Node.js app
-- [ ] [Section 15](#) - Build Image
-- [ ] [Section 16](#) - Docker UI Client
-- [ ] [Section 17](#) - Overview: Docker in complete software development lifecycle
-- [ ] [Section 18](#) - Where to go from here
+- [x] [Section 14](#) - Dockerfile - Dockerize Node.js app
+- [x] [Section 15](#) - Build Image
+- [x] [Section 16](#) - Docker UI Client
+- [x] [Section 17](#) - Overview: Docker in complete software development lifecycle
+- [x] [Section 18](#) - Where to go from here
 
 #### What is docker
 
@@ -102,11 +102,11 @@ Tasks and notes from crash course.
 - One the biggest docker register store is DockerHub
     - One of Reddis [Images](https://hub.docker.com/_/redis) 
 
-<img src="dockerOfficialImages.JPG" alt="alt text" width="600"/>
+<img src="dockerOfficialImages.JPG" alt="alt text" width="500"/>
 
  ### Docker Image Versions
 
-<img src="imageVersioning.JPG" alt="alt text" width="600"/>
+<img src="imageVersioning.JPG" alt="alt text" width="500"/>
 
 - If you need specific version, you can choose specific docker image which has right **tag**
     - `latest` is the latest which was build
@@ -195,18 +195,84 @@ Tasks and notes from crash course.
 
 <br>
 
-<img src="registeryVsRepository.JPG" alt="alt text" width="700"/>
+<img src="registeryVsRepository.JPG" alt="alt text" width="400"/>
 
 ### Dockerfile - Dockerize Node.js app
 
 - We want to build our docker image, when our application version is finished
-    - We do this by writing "defination" how to build image
+    - We do this by writing "definition" how to build image
         - This is called **docker file**
 
-<img src="dockerBaseImage.JPG" alt="alt text" width="700"/>
+<img src="dockerBaseImage.JPG" alt="alt text" width="400"/>
+
+- Telling to build base image **FROM** base image
+
+<br>
+
+<img src="from.JPG" alt="alt text" width="300"/>
+
+- In docker file you can run Linux commands!
+    - This is done with **RUN** directive
+
+- **COPY** copies files from src and adds them to containers path
+
+- **WORKDIR /app** changes working directly inside docker
+
+- Last command in docker file is **CMD**
+
+<img src="cmd.JPG" alt="alt text" width="400"/>
+
+#### Example of docker file
+
+```
+
+FROM node:19-alpine
+
+COPY package.json /app/
+COPY src /app/
+
+# COPY src /app/, last / is important. Docker will create new folder if there is no 
+
+WORKDIR /app
+
+RUN npm install
+
+CMD ["node", "server.js"]
+
+```
+
+### Build Image
+
+<img src="dockerBuild.JPG" alt="alt text" width="300"/>
+
+<br>
+
+<img src="tag.JPG" alt="alt text" width="300"/>
 
 
-- This 
+- Building image `docker build -t node-app:1.0 .`
+    - Last one is location of Dockerfile
 
+<img src="creatingImage.JPG" alt="alt text" width="500"/>
 
-52
+- You can see image is created in layers
+
+- We can run our newly created image `docker run -d -p 3000:3000 node-app:1.0`
+
+- We can see that our application inside docker is running and its being exposed to `localhost:3000`
+
+<img src="runningIn3000Verify.JPG" alt="alt text" width="500"/>
+
+### Docker UI Client
+
+- Same tool is found in UI
+
+<img src="dockerUI.JPG" alt="alt text" width="500"/>
+
+### Overview: Docker in complete software development lifecycle
+
+- CI server can create docker image automatically 
+
+<img src="dockerBuildSycle.JPG" alt="alt text" width="500"/>
+
+1. After commit, **CI server** can be configured with to push and create docker image into **Private Repository**
