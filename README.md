@@ -8,7 +8,7 @@ Tasks and notes from crash course.
 
 ## Video progress
 
-- [x] [Section 01](#) - Intro and Course Overview
+- [x] [Section 01](#What-is-docker) - Intro and Course Overview
 - [x] [Section 02](#) - What is Docker?
 - [x] [Section 03](#) - What problems Docker solves in development and deployment process
 - [x] [Section 04](#) - Virtual Machine vs Docker
@@ -22,7 +22,7 @@ Tasks and notes from crash course.
 - [x] [Section 12](#) - Private Docker Registries
 - [x] [Section 13](#) - Registry vs Repository
 - [x] [Section 14](#) - Dockerfile - Dockerize Node.js app
-- [x] [Section 15](#) - Build Image
+- [x] [Section 15](#Build-Image) - Build Image
 - [x] [Section 16](#) - Docker UI Client
 - [x] [Section 17](#) - Overview: Docker in complete software development lifecycle
 - [x] [Section 18](#) - Where to go from here
@@ -276,3 +276,37 @@ CMD ["node", "server.js"]
 <img src="dockerBuildSycle.JPG" alt="alt text" width="500"/>
 
 1. After commit, **CI server** can be configured with to push and create docker image into **Private Repository**
+
+### Additional about docker
+
+- We can connect docker app and MySQL with help of **network**
+
+<img src="dockerNetworks.JPG" alt="alt text" width="500"/>
+
+1. When running docker container they are running in isolated networks
+
+- Listing all network `docker network ls`
+
+- Creating docker network `docker network create spring-net`
+
+- Connecting our **container** with given **network** `docker network connect spring-net mysqldb`
+
+- Inspecting our container for attached networks `docker container inspect mysqldb`
+
+- We can attach container to **certain network** when starting the container
+
+```
+docker run -p 9090:8080 --name app --net spring-net -e MYSQL_HOST=mysqldb -e MYSQL_USER=root -e MYSQL_PASSWORD=root -e MYSQL_PORT=3306 app
+```
+
+## Creating MySQL running in localhost container
+
+- Starting and pulling and starting MySQL image `docker run -d -p 3307:3306 --name mysqldb -e MYSQL_ROOT_PASSWORD=root -e MYSQL_DATABASE=user_rest_demo mysql`
+
+- To test connection `localhost:3007` and configure `allowPublicKeyRetrieval` to **true**
+
+## Docker Volume
+
+<img src="dockerVolume.JPG" alt="alt text" width="500"/>
+
+- When restarting application data is lost, we can use **volumes** to keep data saved
