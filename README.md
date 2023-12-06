@@ -10,9 +10,9 @@ Tasks and notes from crash course.
 
 - [x] Section 01 - Intro and Course Overview
 - [x] [Section 02](#What-is-docker) - What is Docker?
-- [x] [Section 03](#Development/Deployment-with-Docker) - What problems Docker solves in development and deployment process
+- [x] Section 03 - What problems Docker solves in development and deployment process
 - [x] [Section 04](#Virtual-Machine-vs-Docker) - Virtual Machine vs Docker
-- [x] [Section 05](#Install-Docker) - Install Docker
+- [x] Section 05 - Install Docker
 - [x] [Section 06](#Docker-Images-vs-Containers) - Docker Images vs Containers
 - [x] [Section 07](#Docker-Registries) - Docker Registries
 - [x] [Section 08](#Docker-Image-Versions) - Docker Image Versions
