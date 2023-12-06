@@ -8,24 +8,24 @@ Tasks and notes from crash course.
 
 ## Video progress
 
-- [x] [Section 01](#What-is-docker) - Intro and Course Overview
-- [x] [Section 02](#) - What is Docker?
-- [x] [Section 03](#) - What problems Docker solves in development and deployment process
-- [x] [Section 04](#) - Virtual Machine vs Docker
-- [x] [Section 05](#) - Install Docker
-- [x] [Section 06](#)- Docker Images vs Containers
-- [x] [Section 07](#) - Docker Registries
-- [x] [Section 08](#) - Docker Image Versions
-- [x] [Section 09](#) - Main Docker Commands - Pull and Run Docker containers
-- [x] [Section 10](#) - Port Binding
-- [x] [Section 11](#) - Start and Stop containers
-- [x] [Section 12](#) - Private Docker Registries
-- [x] [Section 13](#) - Registry vs Repository
-- [x] [Section 14](#) - Dockerfile - Dockerize Node.js app
+- [x] Section 01 - Intro and Course Overview
+- [x] [Section 02](#What-is-docker) - What is Docker?
+- [x] [Section 03](#Development/Deployment-with-Docker) - What problems Docker solves in development and deployment process
+- [x] [Section 04](#Virtual-Machine-vs-Docker) - Virtual Machine vs Docker
+- [x] [Section 05](#Install-Docker) - Install Docker
+- [x] [Section 06](#Docker-Images-vs-Containers) - Docker Images vs Containers
+- [x] [Section 07](#Docker-Registries) - Docker Registries
+- [x] [Section 08](#Docker-Image-Versions) - Docker Image Versions
+- [x] [Section 09](#Pull-and-Run-Docker-containers) - Main Docker Commands - Pull and Run Docker containers
+- [x] [Section 10](#Port-Binding) - Port Binding
+- [x] [Section 11](#Start-and-Stop-containers) - Start and Stop containers
+- [x] [Section 12](#Private-Docker-Registries) - Private Docker Registries
+- [x] [Section 13](#Registry-vs-Repository) - Registry vs Repository
+- [x] [Section 14](#Dockerfile) - Dockerfile - Dockerize Node.js app
 - [x] [Section 15](#Build-Image) - Build Image
-- [x] [Section 16](#) - Docker UI Client
-- [x] [Section 17](#) - Overview: Docker in complete software development lifecycle
-- [x] [Section 18](#) - Where to go from here
+- [x] [Section 16](#Docker-UI-Client) - Docker UI Client
+- [x] [Section 17](#Docker-in-complete-software-development-lifecycle) - Overview: Docker in complete software development lifecycle
+- [x] Section 18 - Where to go from here
 
 #### What is docker
 
@@ -111,7 +111,7 @@ Tasks and notes from crash course.
 - If you need specific version, you can choose specific docker image which has right **tag**
     - `latest` is the latest which was build
 
-### Main Docker Commands - Pull and Run Docker containers
+### Pull and Run Docker containers
 
 - To download image `docker pull nginx:1.23`
 
@@ -197,7 +197,7 @@ Tasks and notes from crash course.
 
 <img src="registeryVsRepository.JPG" alt="alt text" width="400"/>
 
-### Dockerfile - Dockerize Node.js app
+### Dockerfile
 
 - We want to build our docker image, when our application version is finished
     - We do this by writing "definition" how to build image
@@ -269,7 +269,7 @@ CMD ["node", "server.js"]
 
 <img src="dockerUI.JPG" alt="alt text" width="500"/>
 
-### Overview: Docker in complete software development lifecycle
+### Docker in complete software development lifecycle
 
 - CI server can create docker image automatically 
 
