@@ -1,6 +1,6 @@
 # Docker Crash Course
 
-Tasks and notes from crash course.
+Tasks and notes from crash course. Made by TechWorld with Nana
 
 [Source](https://www.youtube.com/watch?v=pg19Z8LL06w)
 
