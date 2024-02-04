@@ -1,10 +1,18 @@
-# Docker Crash Course
+# 1h Crash Course Series Proceeding Order
+
+- [x] [First step 01](#docker-crash-course-in-1h) - Docker Crash Course for Absolute Beginners
+- [ ] [Second step 02](#learn-docker-compose) - Learn Docker Compose - From Zero to Hero in 1 Hour 
+- [ ] Third step 03 - Kubernetes Crash Course for Absolute Beginners 
+
+# Docker Crash Course In 1h
+
+<img src="docker_1h_crashcourse.jpg" alt="alt text" width="500"/>
 
 Tasks and notes from crash course. Made by TechWorld with Nana
 
 [Source](https://www.youtube.com/watch?v=pg19Z8LL06w)
 
-
+- [ ] If time and patience take full course: [Docker Tutorial for Beginners FULL COURSE in 3 Hours](https://www.youtube.com/watch?v=pg19Z8LL06w)
 
 ## Video progress
 
@@ -310,3 +318,47 @@ docker run -p 9090:8080 --name app --net spring-net -e MYSQL_HOST=mysqldb -e MYS
 <img src="dockerVolume.JPG" alt="alt text" width="500"/>
 
 - When restarting application data is lost, we can use **volumes** to keep data saved
+
+
+
+# Learn Docker Compose
+
+<img src="docker_1h_compose.jpg" alt="alt text" width="500"/>
+
+Tasks and notes from crash course. Made by TechWorld with Nana
+
+[Source](https://www.youtube.com/watch?v=SXwC9fSwct8)
+
+## Video progress
+
+- [x] [Section 01]() - Intro and Course Overview
+- [x] [Section 02]() - Pre-Requisites to learn Docker Compose
+- [ ] [Section 03]() - What is Docker Compose
+- [ ] [Section 04]() - Demo - Without Docker Compose
+- [ ] [Section 05]() - Why Docker Compose
+- [ ] [Section 06]() - From Docker Commands To Compose File
+- [ ] [Section 07]() - Create Compose File and start application
+- [ ] [Section 08]() - Control Startup Order
+- [ ] [Section 09]() - Docker Compose Commands (Up and Down vs Start and Stop) 
+- [ ] [Section 10]() - Connect own web application
+- [ ] [Section 11]() - Variables in Docker Compose
+- [ ] [Section 12]() - Docker Compose Secrets
+- [ ] [Section 13]() - Use image from private repository
+- [ ] [Section 14]() - Limitations, Docker Compose vs Kubernetes
+
+# Intro and Course Overview
+
+ - We will cover:
+    - **What** is Docker compose
+    - **What problems** it solves?
+    - Common **Use cases**
+    - Hands-on **demos**
+    - **Limitations** of Docker compose
+
+# Pre-Requisites to learn Docker Compose
+
+- It's necessarily to know Docker containers before this one, if no [Watch](Docker-Crash-Course-In-1h)
+
+<img src="pre-requisitve.jpg" alt="alt text" width="500"/>
+
+# What is Docker Compose
