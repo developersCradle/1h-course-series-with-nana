@@ -331,20 +331,20 @@ Tasks and notes from crash course. Made by TechWorld with Nana
 
 ## Video progress
 
-- [x] [Section 01]() - Intro and Course Overview
-- [x] [Section 02]() - Pre-Requisites to learn Docker Compose
-- [ ] [Section 03]() - What is Docker Compose
-- [ ] [Section 04]() - Demo - Without Docker Compose
-- [ ] [Section 05]() - Why Docker Compose
-- [ ] [Section 06]() - From Docker Commands To Compose File
-- [ ] [Section 07]() - Create Compose File and start application
-- [ ] [Section 08]() - Control Startup Order
-- [ ] [Section 09]() - Docker Compose Commands (Up and Down vs Start and Stop) 
-- [ ] [Section 10]() - Connect own web application
-- [ ] [Section 11]() - Variables in Docker Compose
-- [ ] [Section 12]() - Docker Compose Secrets
-- [ ] [Section 13]() - Use image from private repository
-- [ ] [Section 14]() - Limitations, Docker Compose vs Kubernetes
+- [x] [Section 01](#intro-and-course-overview) - Intro and Course Overview
+- [x] [Section 02](#pre-requisites-to-learn-docker-compose) - Pre-Requisites to learn Docker Compose
+- [ ] [Section 03](#what-is-docker-compose) - What is Docker Compose
+- [ ] [Section 04](#demo-without-docker-compose) - Demo - Without Docker Compose
+- [ ] [Section 05](#why-docker-compose) - Why Docker Compose
+- [ ] [Section 06](#from-docker-commands-to-compose-file) - From Docker Commands To Compose File
+- [ ] [Section 07](#create-compose-file-and-start-application) - Create Compose File and start application
+- [ ] [Section 08](#control-startup-order) - Control Startup Order
+- [ ] [Section 09](#docker-compose-commands) - Docker Compose Commands (Up and Down vs Start and Stop) 
+- [ ] [Section 10](#connect-own-web-application) - Connect own web application
+- [ ] [Section 11](#variables-in-docker-compose) - Variables in Docker Compose
+- [ ] [Section 12](#docker-compose-secrets) - Docker Compose Secrets
+- [ ] [Section 13](#use-image-from-private-repository) - Use image from private repository
+- [ ] [Section 14](#limitations,-docker-compose-vs-kubernetes) - Limitations, Docker Compose vs Kubernetes
 
 # Intro and Course Overview
 
@@ -359,6 +359,75 @@ Tasks and notes from crash course. Made by TechWorld with Nana
 
 - It's necessarily to know Docker containers before this one, if no [Watch](Docker-Crash-Course-In-1h)
 
-<img src="pre-requisitve.jpg" alt="alt text" width="500"/>
+<img src="pre-requisitve.jpg" alt="alt text" width="400"/>
 
 # What is Docker Compose
+
+<img src="appInPieces.jpg" alt="alt text" width="400"/>
+
+1. Application can be broken into smaller pieces
+    - Or **Microservice** application
+
+<img src="whatIsDockerCompose.jpg" alt="alt text" width="400"/>
+
+- All of these software components must be containerized and deployed/run together.
+    - These services need to communicate together 
+
+1. We need some tool to control these actions:
+    - Define and run multiple Services in 1 environment
+- Each container is having own configuration and for this we can use **Docker Compose**, which makes our life more easier.  
+
+# Demo - Without Docker Compose
+
+- Demo will have 2 Docker containers    
+    - Just with **Docker** commands
+
+1. Create Docker Network
+2. Start MongoDB Container
+3. Start Mongo Express Container(UI for MongoDB)
+
+
+```
+-todo komennot tähän
+```
+
+# Why Docker Compose
+
+- todo
+
+# From Docker Commands To Compose File
+
+- todo
+
+# Create Compose File and start application
+
+- todo
+
+
+# Control Startup Order
+
+- todo
+
+# Docker Compose Commands 
+
+- todo
+
+#  Connect own web application
+
+- todo 
+
+# Variables in Docker Compose
+
+- todo
+
+# Docker Compose Secrets
+
+- todo
+
+# Use image from private repository
+
+- todo 
+
+# Limitations, Docker Compose vs Kubernetes
+
+- todo
