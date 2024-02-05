@@ -2,7 +2,7 @@
 
 - [x] [First step 01](#docker-crash-course-in-1h) - Docker Crash Course for Absolute Beginners
 - [ ] [Second step 02](#learn-docker-compose) - Learn Docker Compose - From Zero to Hero in 1 Hour 
-- [ ] Third step 03 - Kubernetes Crash Course for Absolute Beginners 
+- [ ] [Third step 03](#) - Kubernetes Crash Course for Absolute Beginners 
 
 # Docker Crash Course In 1h
 
@@ -12,9 +12,13 @@ Tasks and notes from crash course. Made by TechWorld with Nana
 
 [Source](https://www.youtube.com/watch?v=pg19Z8LL06w)
 
+If the content sparked 🔥 your interest, please consider staring the course and start learning 📖
+
+<img id="certificate_docker" src="Docker_1h_series_certificate.png" alt="alt text" width="500"/>
+
 - [ ] If time and patience take full course: [Docker Tutorial for Beginners FULL COURSE in 3 Hours](https://www.youtube.com/watch?v=pg19Z8LL06w)
 
-## Video progress
+## Progress/Curriculum
 
 - [x] Section 01 - Intro and Course Overview
 - [x] [Section 02](#What-is-docker) - What is Docker?
@@ -107,7 +111,7 @@ Tasks and notes from crash course. Made by TechWorld with Nana
 - Official images are available from applications like Redis, Mongo, Postgres etc.
     - There can be verified "Official" images or unofficial ones.
 
-- One the biggest docker register store is DockerHub
+- One the biggest docker register store is **DockerHub**
     - One of Reddis [Images](https://hub.docker.com/_/redis) 
 
 <img src="dockerOfficialImages.JPG" alt="alt text" width="500"/>
@@ -333,9 +337,9 @@ Tasks and notes from crash course. Made by TechWorld with Nana
 
 - [x] [Section 01](#intro-and-course-overview) - Intro and Course Overview
 - [x] [Section 02](#pre-requisites-to-learn-docker-compose) - Pre-Requisites to learn Docker Compose
-- [ ] [Section 03](#what-is-docker-compose) - What is Docker Compose
-- [ ] [Section 04](#demo-without-docker-compose) - Demo - Without Docker Compose
-- [ ] [Section 05](#why-docker-compose) - Why Docker Compose
+- [x] [Section 03](#what-is-docker-compose) - What is Docker Compose
+- [x] [Section 04](#demo-without-docker-compose) - Demo - Without Docker Compose
+- [x] [Section 05](#why-docker-compose) - Why Docker Compose
 - [ ] [Section 06](#from-docker-commands-to-compose-file) - From Docker Commands To Compose File
 - [ ] [Section 07](#create-compose-file-and-start-application) - Create Compose File and start application
 - [ ] [Section 08](#control-startup-order) - Control Startup Order
@@ -375,7 +379,7 @@ Tasks and notes from crash course. Made by TechWorld with Nana
 
 1. We need some tool to control these actions:
     - Define and run multiple Services in 1 environment
-- Each container is having own configuration and for this we can use **Docker Compose**, which makes our life more easier.  
+- Each container is having own configuration and for this we can use **Docker Compose**, which makes our life easier.  
 
 # Demo - Without Docker Compose
 
@@ -386,23 +390,73 @@ Tasks and notes from crash course. Made by TechWorld with Nana
 2. Start MongoDB Container
 3. Start Mongo Express Container(UI for MongoDB)
 
+```
+//Create mongo-netwrok first
+docker network create mongo-network
+```
+
+<img src="dockerNetworkCommand.jpg" alt="alt text" width="300"/>
+
+1. We can see network is being created
 
 ```
--todo komennot tähän
+
+//List all netorks
+docker network ls
+
 ```
+
+- Running MongoDB in Docker
+    - You can see default ports from [Docker Hub](https://hub.docker.com/_/mongo) and default usernames and passwords
+
+- For **mongoDB**
+
+```
+docker run -d -p 27017:27017 -e MONGO_INITDB_ROOT_USERNAME=admin -e MONGO_INITDB_ROOT_PASSWORD=supersecret --network mongo-network --name mongodb mongo
+```
+
+- For **mongo-express**
+    - Its just font-end for **mongoDB**
+
+```
+docker run -d -p 8081:8081 -e ME_CONFIG_MONGODB_ADMINUSERNAME=admin -e ME_CONFIG_MONGODB_ADMINPASSWORD=supersecret -e ME_CONFIG_MONGODB_SERVER=mongodb --network mongo-network --name mongo-express mongo-express
+```
+
+- To try if these work go to `http://localhost:8081/` and log in
+    - **mongoDB** depends on **mongo-express** and to communicate each other **isolated virtual network** must be configured and working!
 
 # Why Docker Compose
 
-- todo
+<img src="lotOfContainers.jpg" alt="alt text" width="300"/>
+
+1. Problem comes when a lot of containers are needed to start and configure to communicate 
+
+- We have one way to manage these → **Docker Compose**  
+    - This is based on **YAML File**
+
+<img src="yaml.jpg" alt="alt text" width="500"/>
 
 # From Docker Commands To Compose File
 
-- todo
+- **Docker-Compose** abstract all the **CMD** commands into **docker-compose** file.
 
-# Create Compose File and start application
+<img src="mappingToCompose.jpg" alt="alt text" width="500"/>
 
-- todo
+<br>
 
+<img src="compose.yaml.jpg" alt="alt text" width="500"/>
+
+1. **Required** attributes for docker file!
+    - First line, **version** of docker-compose which **needs** to be compatible with Compose is **installed locally**
+2. **Services**. List all services, you want to run
+
+<img src="mappingFromDockerCommandToCompose.yaml.jpg" alt="alt text" width="500"/>
+
+1. YAML transfers this cmd commands to **.YAML** one configurable file 
+
+- Here you can see one service being configured
+
+2. Name of service being configured
 
 # Control Startup Order
 
