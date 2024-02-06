@@ -1,8 +1,12 @@
 # 1h Crash Course Series Proceeding Order
 
 - [x] [First step 01](#docker-crash-course-in-1h) - Docker Crash Course for Absolute Beginners
-- [ ] [Second step 02](#learn-docker-compose) - Learn Docker Compose - From Zero to Hero in 1 Hour 
-- [ ] [Third step 03](#) - Kubernetes Crash Course for Absolute Beginners 
+- [ ] [Second step 02](#learn-docker-compose-in-1h) - Learn Docker Compose - From Zero to Hero in 1 Hour 
+- [ ] [Third step 03](#kubernetes-crash-course-for-absolute-beginners-in-1h) - Kubernetes Crash Course for Absolute Beginners 
+
+<br>
+
+- [ ] Todo make combined certificate for all these software development tools 
 
 # Docker Crash Course In 1h
 
@@ -325,7 +329,7 @@ docker run -p 9090:8080 --name app --net spring-net -e MYSQL_HOST=mysqldb -e MYS
 
 
 
-# Learn Docker Compose
+# Learn Docker Compose In 1h
 
 <img src="docker_1h_compose.jpg" alt="alt text" width="500"/>
 
@@ -333,14 +337,16 @@ Tasks and notes from crash course. Made by TechWorld with Nana
 
 [Source](https://www.youtube.com/watch?v=SXwC9fSwct8)
 
-## Video progress
+If the content sparked 🔥 your interest, please consider staring the course and start learning 📖
+
+## Progress/Curriculum
 
 - [x] [Section 01](#intro-and-course-overview) - Intro and Course Overview
 - [x] [Section 02](#pre-requisites-to-learn-docker-compose) - Pre-Requisites to learn Docker Compose
 - [x] [Section 03](#what-is-docker-compose) - What is Docker Compose
 - [x] [Section 04](#demo-without-docker-compose) - Demo - Without Docker Compose
 - [x] [Section 05](#why-docker-compose) - Why Docker Compose
-- [ ] [Section 06](#from-docker-commands-to-compose-file) - From Docker Commands To Compose File
+- [x] [Section 06](#from-docker-commands-to-compose-file) - From Docker Commands To Compose File
 - [ ] [Section 07](#create-compose-file-and-start-application) - Create Compose File and start application
 - [ ] [Section 08](#control-startup-order) - Control Startup Order
 - [ ] [Section 09](#docker-compose-commands) - Docker Compose Commands (Up and Down vs Start and Stop) 
@@ -392,7 +398,8 @@ Tasks and notes from crash course. Made by TechWorld with Nana
 
 ```
 //Create mongo-netwrok first
-docker network create mongo-network
+docker network create
+ mongo-network
 ```
 
 <img src="dockerNetworkCommand.jpg" alt="alt text" width="300"/>
@@ -458,11 +465,45 @@ docker run -d -p 8081:8081 -e ME_CONFIG_MONGODB_ADMINUSERNAME=admin -e ME_CONFIG
 
 2. Name of service being configured
 
-# Control Startup Order
+<img src="mongoDbConfiguration.JPG" alt="alt text" width="500"/>
+
+1. **Container name**, th is will map form command to
+
+2. From which **image name** docker container will be built from. You can specify version list
+
+3. **List of ports** which will be mapping to container.
+    - Most time this
+    you have only one **mapping**
+        - `3.1` **Host** port and `3.2` port inside **Container** 
+4. List of Environment variables for docker 
+
+
+<img src="anotherSeriviceConfigured.JPG" alt="alt text" width="500"/>
+
+- As you can see another service is below other one!
+
+<br>
+
+<img src="sampleOfYaml.JPG" alt="alt text" width="500"/>
+
+- This how the **YAML** will look like for previous example configuration.
+
+- ***Docker Compose** can help your team to collaborate more efficiently since, now they can see how these services can be run separately. **Not** just random cmd commands.
+
+<img src="networkConfigurationNotIncludedWithComposeFile.JPG" alt="alt text" width="500"/>
+
+1. You don't have to include network to **YAML** configuration. This will be taken care by default in docker compose 
+    - Docker takes care of creating **docker network**
+        - From services from list
+     
+
+
+# Docker Compose Commands 
 
 - todo
 
-# Docker Compose Commands 
+# Control Startup Order
+
 
 - todo
 
@@ -482,6 +523,23 @@ docker run -d -p 8081:8081 -e ME_CONFIG_MONGODB_ADMINUSERNAME=admin -e ME_CONFIG
 
 - todo 
 
+
 # Limitations, Docker Compose vs Kubernetes
 
 - todo
+
+## Kubernetes Crash Course for Absolute Beginners In 1h
+
+<img src="kubernetes_1h.jpg" alt="alt text" width="500"/>
+
+Tasks and notes from crash course. Made by TechWorld with Nana
+
+[Source](https://www.youtube.com/watch?v=X48VuDVv0do&t=0s)
+
+If the content sparked 🔥 your interest, please consider staring the course and start learning 📖
+
+- [ ] If time and patience take full course: [Kubernetes Tutorial for Beginners FULL COURSE in 4 Hours](https://www.youtube.com/watch?v=pg19Z8LL06w)
+
+## Progress/Curriculum
+
+- [ ] [Section 01](#)
