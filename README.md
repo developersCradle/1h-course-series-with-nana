@@ -2,6 +2,7 @@
 
 - [x] [First step 01](#docker-crash-course-in-1h) - Docker Crash Course for Absolute Beginners
 - [ ] [Second step 02](#learn-docker-compose-in-1h) - Learn Docker Compose - From Zero to Hero in 1 Hour 
+    - [ ] [Prerequisite step](#) - Yaml Tutorial | Learn YAML in 18 mins  
 - [ ] [Third step 03](#kubernetes-crash-course-for-absolute-beginners-in-1h) - Kubernetes Crash Course for Absolute Beginners 
 
 <br>
@@ -15,6 +16,9 @@
 Tasks and notes from crash course. Made by TechWorld with Nana
 
 [Source](https://www.youtube.com/watch?v=pg19Z8LL06w)
+
+[Source Repository](https://gitlab.com/nanuchi/docker-in-1-hour)
+
 
 If the content sparked 🔥 your interest, please consider staring the course and start learning 📖
 
@@ -337,7 +341,11 @@ Tasks and notes from crash course. Made by TechWorld with Nana
 
 [Source](https://www.youtube.com/watch?v=SXwC9fSwct8)
 
+[Source Repository](https://gitlab.com/twn-youtube/docker-compose-crash-course)
+
 If the content sparked 🔥 your interest, please consider staring the course and start learning 📖
+
+<img id="certificate_docker_copose" src="Docker_compose_1h_series.png" alt="alt text" width="500"/>
 
 ## Progress/Curriculum
 
@@ -356,6 +364,43 @@ If the content sparked 🔥 your interest, please consider staring the course an
 - [ ] [Section 13](#use-image-from-private-repository) - Use image from private repository
 - [ ] [Section 14](#limitations,-docker-compose-vs-kubernetes) - Limitations, Docker Compose vs Kubernetes
 
+<hr>
+
+# Pre-Requisites Course - Yaml Tutorial | Learn YAML in 18 mins
+
+<img src="yaml_tutorial.jpg" alt="alt text" width="400"/>
+
+Tasks and notes from crash course. Made by TechWorld with Nana. This is recommended additional
+
+[Source](https://www.youtube.com/watch?v=1uFVr15xDGg&t=0s)
+
+If the content sparked 🔥 your interest, please consider staring the course and start learning 📖
+
+<img id="" src="" alt="inserted YAML cert here" width="500"/>
+
+### Progress/Curriculum 
+
+- [ ] [Section 01](#) - Intro
+- [ ] [Section 02](#) - YAML is popular
+- [ ] [Section 03](#) - What is YAML?
+- [ ] [Section 04](#) - Why learn YAML? YAML Format compared to XML and JSON
+- [ ] [Section 05](#) - YAML Use Cases
+- [ ] [Section 06](#) - YAML Syntax
+- [ ] [Section 07](#) - Key-value pairs
+- [ ] [Section 08](#) - Comments
+- [ ] [Section 09](#) - Objects
+- [ ] [Section 10](#) - Lists
+- [ ] [Section 11](#) - Boolean
+- [ ] [Section 12](#) - More about lists
+- [ ] [Section 13](#) - Real Kubernetes YAML Configuration Example
+- [ ] [Section 14](#) - Multi-line strings
+- [ ] [Section 15](#) - Environment variables
+- [ ] [Section 16](#) - Placeholders
+- [ ] [Section 17](#) - Multiple Yaml documents
+- [ ] [Section 18](#) - YAML and JSON in Kubernetes
+
+
+
 # Intro and Course Overview
 
  - We will cover:
@@ -367,7 +412,8 @@ If the content sparked 🔥 your interest, please consider staring the course an
 
 # Pre-Requisites to learn Docker Compose
 
-- It's necessarily to know Docker containers before this one, if no [Watch](Docker-Crash-Course-In-1h)
+- It's necessarily to know Docker containers before this one, if no [Watch](#docker-crash-course-in-1h)
+    - It's advised to learn **YAML** format, if no [Check](#)
 
 <img src="pre-requisitve.jpg" alt="alt text" width="400"/>
 
@@ -451,7 +497,7 @@ docker run -d -p 8081:8081 -e ME_CONFIG_MONGODB_ADMINUSERNAME=admin -e ME_CONFIG
 
 <br>
 
-<img src="compose.yaml.jpg" alt="alt text" width="500"/>
+<img src="compose.yaml.jpg" alt="alt text" width="400"/>
 
 1. **Required** attributes for docker file!
     - First line, **version** of docker-compose which **needs** to be compatible with Compose is **installed locally**
@@ -495,8 +541,14 @@ docker run -d -p 8081:8081 -e ME_CONFIG_MONGODB_ADMINUSERNAME=admin -e ME_CONFIG
 1. You don't have to include network to **YAML** configuration. This will be taken care by default in docker compose 
     - Docker takes care of creating **docker network**
         - From services from list
-     
 
+<img src="yamlIndentation.JPG" alt="yaml" width="500"/>
+
+1. When making **YAML** file be careful of indentation
+
+- Running **YAML**
+
+jäin 17:30
 
 # Docker Compose Commands 
 
