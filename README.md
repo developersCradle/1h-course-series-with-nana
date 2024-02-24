@@ -2,12 +2,13 @@
 
 - [x] [First step 01](#docker-crash-course-in-1h) - Docker Crash Course for Absolute Beginners
 - [ ] [Second step 02](#learn-docker-compose-in-1h) - Learn Docker Compose - From Zero to Hero in 1 Hour 
-    - [ ] [Prerequisite step](#) - Yaml Tutorial | Learn YAML in 18 mins  
+    - [ ] [Good to Know - Prerequisite step](#) - Yaml Tutorial | Learn YAML in 18 mins 
+    - [ ] [Good to Know - Prerequisite step](#) - Microservices explained - the What, Why and How?
 - [ ] [Third step 03](#kubernetes-crash-course-for-absolute-beginners-in-1h) - Kubernetes Crash Course for Absolute Beginners 
 
 <br>
 
-- [ ] Todo make combined certificate for all these software development tools 
+- [ ] TODO make combined certificate for all these software development tools 
 
 # Docker Crash Course In 1h
 
@@ -24,7 +25,7 @@ If the content sparked 🔥 your interest, please consider staring the course an
 
 <img id="certificate_docker" src="Docker_1h_series_certificate.png" alt="alt text" width="500"/>
 
-- [ ] If time and patience take full course: [Docker Tutorial for Beginners FULL COURSE in 3 Hours](https://www.youtube.com/watch?v=pg19Z8LL06w)
+- [ ] If time and patience take full course: [Docker Tutorial for Beginners FULL COURSE in 3 Hours](https://www.youtube.com/watch?v=3c-iBn73dDE&t=0s)
 
 ## Progress/Curriculum
 
@@ -366,40 +367,6 @@ If the content sparked 🔥 your interest, please consider staring the course an
 
 <hr>
 
-# Pre-Requisites Course - Yaml Tutorial | Learn YAML in 18 mins
-
-<img src="yaml_tutorial.jpg" alt="alt text" width="400"/>
-
-Tasks and notes from crash course. Made by TechWorld with Nana. This is recommended additional
-
-[Source](https://www.youtube.com/watch?v=1uFVr15xDGg&t=0s)
-
-If the content sparked 🔥 your interest, please consider staring the course and start learning 📖
-
-<img id="" src="" alt="inserted YAML cert here" width="500"/>
-
-### Progress/Curriculum 
-
-- [ ] [Section 01](#) - Intro
-- [ ] [Section 02](#) - YAML is popular
-- [ ] [Section 03](#) - What is YAML?
-- [ ] [Section 04](#) - Why learn YAML? YAML Format compared to XML and JSON
-- [ ] [Section 05](#) - YAML Use Cases
-- [ ] [Section 06](#) - YAML Syntax
-- [ ] [Section 07](#) - Key-value pairs
-- [ ] [Section 08](#) - Comments
-- [ ] [Section 09](#) - Objects
-- [ ] [Section 10](#) - Lists
-- [ ] [Section 11](#) - Boolean
-- [ ] [Section 12](#) - More about lists
-- [ ] [Section 13](#) - Real Kubernetes YAML Configuration Example
-- [ ] [Section 14](#) - Multi-line strings
-- [ ] [Section 15](#) - Environment variables
-- [ ] [Section 16](#) - Placeholders
-- [ ] [Section 17](#) - Multiple Yaml documents
-- [ ] [Section 18](#) - YAML and JSON in Kubernetes
-
-
 
 # Intro and Course Overview
 
@@ -513,7 +480,7 @@ docker run -d -p 8081:8081 -e ME_CONFIG_MONGODB_ADMINUSERNAME=admin -e ME_CONFIG
 
 <img src="mongoDbConfiguration.JPG" alt="alt text" width="500"/>
 
-1. **Container name**, th is will map form command to
+1. **Container name**, this will map form command to
 
 2. From which **image name** docker container will be built from. You can specify version list
 
@@ -548,18 +515,67 @@ docker run -d -p 8081:8081 -e ME_CONFIG_MONGODB_ADMINUSERNAME=admin -e ME_CONFIG
 
 - Running **YAML**
 
-jäin 17:30
-
 # Docker Compose Commands 
 
-- todo
+- We are trying to execute **compose** file
+    - First we remove our old **networks** and **containers**
+
+
+```
+docker rm hashGoesHere // Removing container
+
+docker network rm mongo-network // Removing docker network
+```
+
+- If you have **docker** installed in your computer, you don't need to install **Docker Compose**
+
+- starting with docker compose
+    - `docker-build -f mongo-services.yaml up`
+        - `up` argument for running from up to down different services
+
+<img src="runningDockerCompose.JPG" alt="alt text" width="500"/>
+
+<br>
+
+<img src="executingDockerCompose.JPG" alt="alt text" width="500"/>
+
+1. You can see how **network names** are created. **1.** prefix from folder where **.YAML** was run. 
+
+> Docker basically takes folder where it was executed and prefixes with names.
+
+- Docker logs are mixed since two containers were started at sane time.
 
 # Control Startup Order
 
+- When multiple services
+    - When we need db before front-end
 
-- todo
+- This decency can be done using `depends_on`
+    - This affects control of the services
+    - This will start container **only** when dependencies are finished
 
-#  Connect own web application
+- Example using `depends_on:` in case of **mongo-express:**
+
+```
+  mongo-express:
+    image: mongo-express
+    ports:
+     - 8081:8081
+    environment:
+      ME_CONFIG_MONGODB_ADMINUSERNAME=: admin
+      ME_CONFIG_MONGODB_ADMINPASSWORD=: supersecret
+      ME_CONFIG_MONGODB_SERVER=: mongodb
+    depends_on:
+      - "mongodb" # Takes list of services
+```
+
+- Running following **Compose** in detach mode `docker-compose -f mongo-services.yaml up -d`
+
+- We could stop containers using `docker stop`, but with big compose files this get problematic
+
+- Shutting down all services from **compose file** `docker-compose -f mongo-services.yaml down`
+
+# Connect own web application
 
 - todo 
 
