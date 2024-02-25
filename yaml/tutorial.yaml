@@ -1,0 +1,33 @@
+microservices:
+  - app: user-authentication
+    # Comment here
+    port: 9000
+    version: 1,7
+    # Boolean values
+    deployed: on
+    deployed: off
+    deployed: true
+    deployed: false
+    deployed: yes
+    deployed: no
+  - app : shopping-cart
+    port: 9002
+    version: [1.9, 2.0, 2.1]
+  #  version: # List inside list item
+  #  - 1.9 
+  #  - 2.0 
+  #  - 2.1 
+
+
+# List of simple objects, microservice names
+microservices:
+  - user-authentication
+  - shopping-cart
+
+#Multiline string
+multilineString: |
+  this is a multipline string
+  and tihis is the next line
+  next line 
+
+  

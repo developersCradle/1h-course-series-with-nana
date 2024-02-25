@@ -2,7 +2,7 @@
 
 - [x] [First step 01](#docker-crash-course-in-1h) - Docker Crash Course for Absolute Beginners
 - [ ] [Second step 02](#learn-docker-compose-in-1h) - Learn Docker Compose - From Zero to Hero in 1 Hour 
-    - [ ] [Good to Know - Prerequisite step](#) - Yaml Tutorial | Learn YAML in 18 mins 
+    - [x] [Good to Know - Prerequisite step](https://github.com/developersCradle/1h-course-series-with-nana/tree/main/yaml#yaml_cerificate) - Yaml Tutorial | Learn YAML in 18 mins 
     - [ ] [Good to Know - Prerequisite step](#) - Microservices explained - the What, Why and How?
 - [ ] [Third step 03](#kubernetes-crash-course-for-absolute-beginners-in-1h) - Kubernetes Crash Course for Absolute Beginners 
 
