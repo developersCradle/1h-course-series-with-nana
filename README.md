@@ -356,10 +356,10 @@ If the content sparked 🔥 your interest, please consider staring the course an
 - [x] [Section 04](#demo-without-docker-compose) - Demo - Without Docker Compose
 - [x] [Section 05](#why-docker-compose) - Why Docker Compose
 - [x] [Section 06](#from-docker-commands-to-compose-file) - From Docker Commands To Compose File
-- [ ] [Section 07](#create-compose-file-and-start-application) - Create Compose File and start application
-- [ ] [Section 08](#control-startup-order) - Control Startup Order
-- [ ] [Section 09](#docker-compose-commands) - Docker Compose Commands (Up and Down vs Start and Stop) 
-- [ ] [Section 10](#connect-own-web-application) - Connect own web application
+- [x] [Section 07](#create-compose-file-and-start-application) - Create Compose File and start application
+- [x] [Section 08](#control-startup-order) - Control Startup Order
+- [x] [Section 09](#docker-compose-commands) - Docker Compose Commands (Up and Down vs Start and Stop) 
+- [x] [Section 10](#connect-own-web-application) - Connect own web application
 - [ ] [Section 11](#variables-in-docker-compose) - Variables in Docker Compose
 - [ ] [Section 12](#docker-compose-secrets) - Docker Compose Secrets
 - [ ] [Section 13](#use-image-from-private-repository) - Use image from private repository
@@ -382,7 +382,7 @@ If the content sparked 🔥 your interest, please consider staring the course an
 - It's necessarily to know Docker containers before this one, if no [Watch](#docker-crash-course-in-1h)
     - It's advised to learn **YAML** format, if no [Check](#)
 
-<img src="pre-requisitve.jpg" alt="alt text" width="400"/>
+<img src="pre-requisitve.jpg" alt="alt text" width="300"/>
 
 # What is Docker Compose
 
@@ -454,7 +454,7 @@ docker run -d -p 8081:8081 -e ME_CONFIG_MONGODB_ADMINUSERNAME=admin -e ME_CONFIG
 - We have one way to manage these → **Docker Compose**  
     - This is based on **YAML File**
 
-<img src="yaml.jpg" alt="alt text" width="500"/>
+<img src="yaml.jpg" alt="alt text" width="400"/>
 
 # From Docker Commands To Compose File
 
@@ -470,7 +470,7 @@ docker run -d -p 8081:8081 -e ME_CONFIG_MONGODB_ADMINUSERNAME=admin -e ME_CONFIG
     - First line, **version** of docker-compose which **needs** to be compatible with Compose is **installed locally**
 2. **Services**. List all services, you want to run
 
-<img src="mappingFromDockerCommandToCompose.yaml.jpg" alt="alt text" width="500"/>
+<img src="mappingFromDockerCommandToCompose.yaml.jpg" alt="alt text" width="450"/>
 
 1. YAML transfers this cmd commands to **.YAML** one configurable file 
 
@@ -478,7 +478,7 @@ docker run -d -p 8081:8081 -e ME_CONFIG_MONGODB_ADMINUSERNAME=admin -e ME_CONFIG
 
 2. Name of service being configured
 
-<img src="mongoDbConfiguration.JPG" alt="alt text" width="500"/>
+<img src="mongoDbConfiguration.JPG" alt="alt text" width="450"/>
 
 1. **Container name**, this will map form command to
 
@@ -533,11 +533,11 @@ docker network rm mongo-network // Removing docker network
     - `docker-build -f mongo-services.yaml up`
         - `up` argument for running from up to down different services
 
-<img src="runningDockerCompose.JPG" alt="alt text" width="500"/>
+<img src="runningDockerCompose.JPG" alt="alt text" width="550"/>
 
 <br>
 
-<img src="executingDockerCompose.JPG" alt="alt text" width="500"/>
+<img src="executingDockerCompose.JPG" alt="alt text" width="550"/>
 
 1. You can see how **network names** are created. **1.** prefix from folder where **.YAML** was run. 
 
@@ -554,7 +554,10 @@ docker network rm mongo-network // Removing docker network
     - This affects control of the services
     - This will start container **only** when dependencies are finished
 
+<img src="mongoDepends.PNG" alt="alt text" width="300"/>
+
 - Example using `depends_on:` in case of **mongo-express:**
+
 
 ```
   mongo-express:
@@ -569,15 +572,36 @@ docker network rm mongo-network // Removing docker network
       - "mongodb" # Takes list of services
 ```
 
+- Whole `mongo-express` service **won't be** started, before `mongodb` is up and running
+
+
 - Running following **Compose** in detach mode `docker-compose -f mongo-services.yaml up -d`
+
+
+# Docker Compose Commands (Up and Down vs Start and Stop)
 
 - We could stop containers using `docker stop`, but with big compose files this get problematic
 
-- Shutting down all services from **compose file** `docker-compose -f mongo-services.yaml down`
+<img src="dockerDown.PNG" alt="alt text" width="300"/>
+
+1. We can close all containers in the same time and remove them with following command `docker-compose -f mongo-services.yaml down`
+    - This will clean **networks**, **containers** and **docker images**
+
+<img src="reminderAboutContainers.PNG" alt="alt text" width="600"/>
+
+1. Data will be gone once container is removed
+2. Unless you define **volumes**
+
+<img src="useCases.PNG" alt="alt text" width="600"/>
+
+1.  Data will be lost when container is removed
+2.  Data will be saved
+
+- These have different **use cases** 
 
 # Connect own web application
 
-- todo 
+- Here we will add own app to our services
 
 # Variables in Docker Compose
 
