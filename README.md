@@ -1,35 +1,42 @@
-# 1h Crash Course Series Proceeding Order
+# 1h Crash Course Series Proceeding Order.
 
-- [x] [First step 01](#docker-crash-course-in-1h) - Docker Crash Course for Absolute Beginners
-- [ ] [Second step 02](#learn-docker-compose-in-1h) - Learn Docker Compose - From Zero to Hero in 1 Hour 
-    - [x] [Good to Know - Prerequisite step](https://github.com/developersCradle/1h-course-series-with-nana/tree/main/yaml#yaml_cerificate) - Yaml Tutorial | Learn YAML in 18 mins 
+- [x] [First step 01](#docker-crash-course-in-1h) - Docker Crash Course for Absolute Beginners.
+- [ ] [Second step 02](#learn-docker-compose-in-1h) - Learn Docker Compose - From Zero to Hero in 1 Hour. 
+    - [x] [Good to Know - Prerequisite step](https://github.com/developersCradle/1h-course-series-with-nana/tree/main/yaml#yaml_cerificate) - Yaml Tutorial | Learn YAML in 18 mins. 
     - [ ] [Good to Know - Prerequisite step](#) - Microservices explained - the What, Why and How?
-- [ ] [Third step 03](#kubernetes-crash-course-for-absolute-beginners-in-1h) - Kubernetes Crash Course for Absolute Beginners 
+- [ ] [Third step 03](#kubernetes-crash-course-for-absolute-beginners-in-1h) - Kubernetes Crash Course for Absolute Beginners. 
 
-<br>
+### Additional stuff.
 
-- [ ] TODO make combined certificate for all these software development tools 
+- [ ] Make combined certificate for all these software development tools. 
 
-# Docker Crash Course In 1h
+- [ ] If time and patience take full course: [Docker Tutorial for Beginners FULL COURSE in 3 Hours](https://www.youtube.com/watch?v=3c-iBn73dDE&t=0s).
+
+# Docker Crash Course In 1h.
 
 <img src="docker_1h_crashcourse.jpg" alt="alt text" width="500"/>
 
-Tasks and notes from crash course. Made by TechWorld with Nana
+Tasks and notes from crash course. Made by **TechWorld with Nana**. Contains my own notes for not just watch videos.
 
-[Source](https://www.youtube.com/watch?v=pg19Z8LL06w)
+[Source](https://www.youtube.com/watch?v=pg19Z8LL06w).
 
-[Source Repository](https://gitlab.com/nanuchi/docker-in-1-hour)
+[Source Repository](https://gitlab.com/nanuchi/docker-in-1-hour).
 
+If the content sparked 🔥 your interest, please consider staring the course and start learning 📖.
 
-If the content sparked 🔥 your interest, please consider staring the course and start learning 📖
+<!-- 
+Linkedin puts this shit front, when clicking from private mode x(. Need to put this to make jump working every case
+?trk=public_profile_see-credential 
+-->
 
-<img id="certificate_docker" src="Docker_1h_series_certificate.png" alt="alt text" width="500"/>
+<img id="certificate_docker?trk=public_profile_see-credential" src="Docker_1h_series_certificate.png" alt="Certification docker" width="600"/>
 
-- [ ] If time and patience take full course: [Docker Tutorial for Beginners FULL COURSE in 3 Hours](https://www.youtube.com/watch?v=3c-iBn73dDE&t=0s)
+**Note: The material provided in this repository is only for helping those who may get stuck at any point of time in the course. It is very advised that no one should just copy the solutions(violation of Honor Code) presented here.**
+
 
 ## Progress/Curriculum
 
-- [x] Section 01 - Intro and Course Overview
+- [x] [Section 01](#Intro-and-Course-Overview) - Intro and Course Overview. ✅
 - [x] [Section 02](#What-is-docker) - What is Docker?
 - [x] Section 03 - What problems Docker solves in development and deployment process
 - [x] [Section 04](#Virtual-Machine-vs-Docker) - Virtual Machine vs Docker
@@ -48,59 +55,66 @@ If the content sparked 🔥 your interest, please consider staring the course an
 - [x] [Section 17](#Docker-in-complete-software-development-lifecycle) - Overview: Docker in complete software development lifecycle
 - [x] Section 18 - Where to go from here
 
-#### What is docker
+# Intro and Course Overview.
 
- - Before containers, all developers needed to install their own setups of tools for their specific needs.
-    - Os specific
-    - Configuration specific
-    - Etc
+- We wil be covering following:
 
-#### Development/Deployment with Docker 
+<img src="courseOverview.PNG" alt="alt text" width="500"/>
+
+# What is docker.
+
+<img src="whatIsDocker.PNG" alt="alt text" width="500"/>
+
+ - Before **Docker**, all developers needed to install their own setups of tools for their specific needs.
+    - Os specific.
+    - Configuration specific.
+    - Etc.
+
+# Development/Deployment with Docker. 
 
 <img src="dockerDevelopementProcess.JPG" alt="alt text" width="500"/>
 
 1. All these decencies are inside container. 
-2. As **developer,** you just need to execute **one docker command** and get **docker container package** `docker run postgres`
+2. As **developer,** you just need to execute **one docker command** and get **docker container package** `docker run postgres`.
 
-- Docker standardizes process of running any service on any local dev environment
-    - More time for development than setting up configuration
-    - With docker you can have same service running on local device whiteout any conflict 
+- Docker standardizes process of running any service on any local dev environment.
+    - More time for development than setting up configuration.
+    - With docker you can have same service running on local device whiteout any conflict. 
 
 <img src="deploymentProcessWithConainers.JPG" alt="alt text" width="500"/>
 
-- With containers → DevOps team just needs to fetch and run **Docker artifact**
+- With containers → DevOps team just needs to fetch and run **Docker artifact**.
 
-#### Virtual Machine vs Docker
+#### Virtual Machine vs Docker.
 
--  Docker virtualize **OS Application Layer**
-- Virtual machine virtualizes
-**OS Application Layer** and **OS kernel** → Meaning virtualizes **complete operating system**
+- Docker virtualize **OS Application Layer**.
+- Virtual machine virtualizes.
+**OS Application Layer** and **OS kernel** → Meaning virtualizes **complete operating system**.
 
 - What it means:
-    - Docker image is, a couple of **MB**
-    - Dockers container takes **seconds** to start
-    - Dockers compatible only with **Linux distros**
-    - Vm images, a couple of **GB**
-    - Vm takes **minutes** to start
-    - Vm is running with all **OS**
+    - Docker image is, a couple of **MB**.
+    - Dockers container takes **seconds** to start.
+    - Dockers compatible only with **Linux distros**.
+    - Vm images, a couple of **GB**.
+    - Vm takes **minutes** to start.
+    - Vm is running with all **OS**.
 
 <img src="runningDockerProblem.JPG" alt="alt text" width="600"/>
 
-1. Docker can't run Linux based docker image in **Windows Host**  
+1. Docker can't run Linux based docker image in **Windows Host**.
 
-- Docker Desktop
-    - Linux containers run on Windows or macOS
+- Docker Desktop.
+    - Linux containers run on Windows or macOS.
     - This is solved with **Hypervisor layer** with small Linux distro.
-    `install Docker Desktop`
+    `install Docker Desktop`.
 
-### Docker Images vs Containers
+# Docker Images vs Containers.
 
 - **Docker images** are like **.jar** a file packaged in containers.
-    - It has compiled code
-    - It also has **complete environment configuration**
-        - Application, any services(Js app)(node, npm) needed, Os Layer(Linux)
-    - Add env variables,
-    create directories
+    - It has compiled code.
+    - It also has **complete environment configuration**.
+        - Application, any services(Js app)(node, npm) needed, Os Layer(Linux).
+    - Add env variables, create directories.
 
 - **Docker Container** is running image
 - You can one you can run multiple container
@@ -113,7 +127,7 @@ If the content sparked 🔥 your interest, please consider staring the course an
 
 - `docker ps` List running containers
 
-### Docker Registries
+# Docker Registries.
 
 - There are images stored in Docker Register
 
@@ -125,14 +139,14 @@ If the content sparked 🔥 your interest, please consider staring the course an
 
 <img src="dockerOfficialImages.JPG" alt="alt text" width="500"/>
 
- ### Docker Image Versions
+ # Docker Image Versions.
 
 <img src="imageVersioning.JPG" alt="alt text" width="500"/>
 
 - If you need specific version, you can choose specific docker image which has right **tag**
     - `latest` is the latest which was build
 
-### Pull and Run Docker containers
+# Pull and Run Docker containers.
 
 - To download image `docker pull nginx:1.23`
 
@@ -147,7 +161,7 @@ If the content sparked 🔥 your interest, please consider staring the course an
 
 <img src="dockerRun.JPG" alt="alt text" width="400"/>
 
-### Port Binding
+# Port Binding.
 
 <img src="portBinding.JPG" alt="alt text" width="400"/>
 
@@ -199,7 +213,7 @@ If the content sparked 🔥 your interest, please consider staring the course an
 
 - It's standard to bind same port into container and which is exposed outside of container
 
-### Start and Stop containers
+# Start and Stop containers.
 
 - Docker run always creates new container
 
@@ -208,17 +222,17 @@ If the content sparked 🔥 your interest, please consider staring the course an
 `docker ps -a`
 - To start container you can use `docker start {container} = start one or more stopped containers`. Example `docker logs 6cb988ce6e05`
 
-### Private Docker Registries
+# Private Docker Registries.
 
 - When companies, creates their own public private docker registries.
 
-### Registry vs Repository
+# Registry vs Repository.
 
 <br>
 
 <img src="registeryVsRepository.JPG" alt="alt text" width="400"/>
 
-### Dockerfile
+# Dockerfile.
 
 - We want to build our docker image, when our application version is finished
     - We do this by writing "definition" how to build image
@@ -243,7 +257,7 @@ If the content sparked 🔥 your interest, please consider staring the course an
 
 <img src="cmd.JPG" alt="alt text" width="400"/>
 
-#### Example of docker file
+# Example of docker file.
 
 ```
 
@@ -262,7 +276,7 @@ CMD ["node", "server.js"]
 
 ```
 
-### Build Image
+# Build Image.
 
 <img src="dockerBuild.JPG" alt="alt text" width="300"/>
 
@@ -284,13 +298,13 @@ CMD ["node", "server.js"]
 
 <img src="runningIn3000Verify.JPG" alt="alt text" width="500"/>
 
-### Docker UI Client
+# Docker UI Client.
 
-- Same tool is found in UI
+- Same tool is found in UI.
 
 <img src="dockerUI.JPG" alt="alt text" width="500"/>
 
-### Docker in complete software development lifecycle
+# Docker in complete software development lifecycle.
 
 - CI server can create docker image automatically 
 
@@ -298,7 +312,7 @@ CMD ["node", "server.js"]
 
 1. After commit, **CI server** can be configured with to push and create docker image into **Private Repository**
 
-### Additional about docker
+# Additional about docker.
 
 - We can connect docker app and MySQL with help of **network**
 
@@ -306,39 +320,37 @@ CMD ["node", "server.js"]
 
 1. When running docker container they are running in isolated networks
 
-- Listing all network `docker network ls`
+- Listing all network `docker network ls`.
 
-- Creating docker network `docker network create spring-net`
+- Creating docker network `docker network create spring-net`.
 
-- Connecting our **container** with given **network** `docker network connect spring-net mysqldb`
+- Connecting our **container** with given **network** `docker network connect spring-net mysqldb`.
 
-- Inspecting our container for attached networks `docker container inspect mysqldb`
+- Inspecting our container for attached networks `docker container inspect mysqldb`.
 
-- We can attach container to **certain network** when starting the container
+- We can attach container to **certain network** when starting the container.
 
 ```
 docker run -p 9090:8080 --name app --net spring-net -e MYSQL_HOST=mysqldb -e MYSQL_USER=root -e MYSQL_PASSWORD=root -e MYSQL_PORT=3306 app
 ```
 
-## Creating MySQL running in localhost container
+# Creating MySQL running in localhost container.
 
-- Starting and pulling and starting MySQL image `docker run -d -p 3307:3306 --name mysqldb -e MYSQL_ROOT_PASSWORD=root -e MYSQL_DATABASE=user_rest_demo mysql`
+- Starting and pulling and starting MySQL image `docker run -d -p 3307:3306 --name mysqldb -e MYSQL_ROOT_PASSWORD=root -e MYSQL_DATABASE=user_rest_demo mysql`.
 
-- To test connection `localhost:3007` and configure `allowPublicKeyRetrieval` to **true**
+- To test connection `localhost:3007` and configure `allowPublicKeyRetrieval` to **true**.
 
-## Docker Volume
+# Docker Volume.
 
 <img src="dockerVolume.JPG" alt="alt text" width="500"/>
 
-- When restarting application data is lost, we can use **volumes** to keep data saved
+- When restarting application data is lost, we can use **volumes** to keep data saved.
 
-
-
-# Learn Docker Compose In 1h
+# Learn Docker Compose In 1h.
 
 <img src="docker_1h_compose.jpg" alt="alt text" width="500"/>
 
-Tasks and notes from crash course. Made by TechWorld with Nana
+Tasks and notes from crash course. Made by TechWorld with **Nana**.
 
 [Source](https://www.youtube.com/watch?v=SXwC9fSwct8)
 
@@ -346,9 +358,16 @@ Tasks and notes from crash course. Made by TechWorld with Nana
 
 If the content sparked 🔥 your interest, please consider staring the course and start learning 📖
 
+<!-- 
+Linkedin puts this shit front, when clicking from private mode x(. Need to put this to make jump working every case
+?trk=public_profile_see-credential 
+-->
+
 <img id="certificate_docker_copose" src="Docker_compose_1h_series.png" alt="alt text" width="500"/>
 
-## Progress/Curriculum
+**Note: The material provided in this repository is only for helping those who may get stuck at any point of time in the course. It is very advised that no one should just copy the solutions(violation of Honor Code) presented here.**
+
+# Progress/Curriculum
 
 - [x] [Section 01](#intro-and-course-overview) - Intro and Course Overview
 - [x] [Section 02](#pre-requisites-to-learn-docker-compose) - Pre-Requisites to learn Docker Compose
@@ -367,8 +386,7 @@ If the content sparked 🔥 your interest, please consider staring the course an
 
 <hr>
 
-
-# Intro and Course Overview
+# Intro and Course Overview.
 
  - We will cover:
     - **What** is Docker compose
@@ -377,66 +395,66 @@ If the content sparked 🔥 your interest, please consider staring the course an
     - Hands-on **demos**
     - **Limitations** of Docker compose
 
-# Pre-Requisites to learn Docker Compose
+# Pre-Requisites to learn Docker Compose.
 
 - It's necessarily to know Docker containers before this one, if no [Watch](#docker-crash-course-in-1h)
     - It's advised to learn **YAML** format, if no [Check](#)
 
 <img src="pre-requisitve.jpg" alt="alt text" width="300"/>
 
-# What is Docker Compose
+# What is Docker Compose.
 
 <img src="appInPieces.jpg" alt="alt text" width="400"/>
 
-1. Application can be broken into smaller pieces
-    - Or **Microservice** application
+1. Application can be broken into smaller pieces.
+    - Or **Microservice** application.
 
 <img src="whatIsDockerCompose.jpg" alt="alt text" width="400"/>
 
 - All of these software components must be containerized and deployed/run together.
-    - These services need to communicate together 
+    - These services need to communicate together.
 
 1. We need some tool to control these actions:
-    - Define and run multiple Services in 1 environment
+    - Define and run multiple Services in 1 environment.
 - Each container is having own configuration and for this we can use **Docker Compose**, which makes our life easier.  
 
-# Demo - Without Docker Compose
+# Demo - Without Docker Compose.
 
-- Demo will have 2 Docker containers    
-    - Just with **Docker** commands
+- Demo will have 2 Docker containers.    
+    - Just with **Docker** commands.
 
-1. Create Docker Network
-2. Start MongoDB Container
-3. Start Mongo Express Container(UI for MongoDB)
+1. Create Docker Network.
+2. Start MongoDB Container.
+3. Start Mongo Express Container(UI for MongoDB).
 
 ```
-//Create mongo-netwrok first
+//Create mongo-network first
 docker network create
  mongo-network
 ```
 
 <img src="dockerNetworkCommand.jpg" alt="alt text" width="300"/>
 
-1. We can see network is being created
+1. We can see network is being created.
 
 ```
 
-//List all netorks
+//List all networks
 docker network ls
 
 ```
 
-- Running MongoDB in Docker
-    - You can see default ports from [Docker Hub](https://hub.docker.com/_/mongo) and default usernames and passwords
+- Running MongoDB in Docker.
+    - You can see default ports from [Docker Hub](https://hub.docker.com/_/mongo) and default usernames and passwords.
 
-- For **mongoDB**
+- For **mongoDB**.
 
 ```
 docker run -d -p 27017:27017 -e MONGO_INITDB_ROOT_USERNAME=admin -e MONGO_INITDB_ROOT_PASSWORD=supersecret --network mongo-network --name mongodb mongo
 ```
 
-- For **mongo-express**
-    - Its just font-end for **mongoDB**
+- For **mongo-express**.
+    - Its just font-end for **mongoDB**.
 
 ```
 docker run -d -p 8081:8081 -e ME_CONFIG_MONGODB_ADMINUSERNAME=admin -e ME_CONFIG_MONGODB_ADMINPASSWORD=supersecret -e ME_CONFIG_MONGODB_SERVER=mongodb --network mongo-network --name mongo-express mongo-express
@@ -445,18 +463,18 @@ docker run -d -p 8081:8081 -e ME_CONFIG_MONGODB_ADMINUSERNAME=admin -e ME_CONFIG
 - To try if these work go to `http://localhost:8081/` and log in
     - **mongoDB** depends on **mongo-express** and to communicate each other **isolated virtual network** must be configured and working!
 
-# Why Docker Compose
+# Why Docker Compose.
 
 <img src="lotOfContainers.jpg" alt="alt text" width="300"/>
 
 1. Problem comes when a lot of containers are needed to start and configure to communicate 
 
-- We have one way to manage these → **Docker Compose**  
+- We have one way to manage these → **Docker Compose**.  
     - This is based on **YAML File**
 
 <img src="yaml.jpg" alt="alt text" width="400"/>
 
-# From Docker Commands To Compose File
+# From Docker Commands To Compose File.
 
 - **Docker-Compose** abstract all the **CMD** commands into **docker-compose** file.
 
@@ -470,15 +488,13 @@ docker run -d -p 8081:8081 -e ME_CONFIG_MONGODB_ADMINUSERNAME=admin -e ME_CONFIG
     - First line, **version** of docker-compose which **needs** to be compatible with Compose is **installed locally**
 2. **Services**. List all services, you want to run
 
-<img src="mappingFromDockerCommandToCompose.yaml.jpg" alt="alt text" width="450"/>
+<img src="mappingFromDockerCommandToCompose.yaml.jpg" alt="alt text" width="500"/>
 
 1. YAML transfers this cmd commands to **.YAML** one configurable file 
+    - Here you can see one service **being configured**.
+2. Name of service being configured.
 
-- Here you can see one service being configured
-
-2. Name of service being configured
-
-<img src="mongoDbConfiguration.JPG" alt="alt text" width="450"/>
+<img src="mongoDbConfiguration.JPG" alt="alt text" width="500"/>
 
 1. **Container name**, this will map form command to
 

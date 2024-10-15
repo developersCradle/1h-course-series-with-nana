@@ -4,11 +4,13 @@
 
 <img src="yaml_tutorial.jpg" alt="alt text" width="400"/>
 
-Tasks and notes from crash course. Made by TechWorld with Nana
+Tasks and notes from crash course. Made by TechWorld with Nana. Contains my own notes.
 
 [Source](https://www.youtube.com/watch?v=pg19Z8LL06w)
 
 If the content sparked 🔥 your interest, please consider staring the course and start learning 📖
+
+**Note: The material provided in this repository is only for helping those who may get stuck at any point of time in the course. It is very advised that no one should just copy the solutions(violation of Honor Code) presented here.**
 
 ### Progress/Curriculum 
 
