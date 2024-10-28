@@ -6,12 +6,6 @@
     - [ ] [Good to Know - Prerequisite step](#) - Microservices explained - the What, Why and How?
 - [ ] [Third step 03](#kubernetes-crash-course-for-absolute-beginners-in-1h) - Kubernetes Crash Course for Absolute Beginners. 
 
-### Additional stuff.
-
-- [ ] Make combined certificate for all these software development tools. 
-
-- [ ] If time and patience take full course: [Docker Tutorial for Beginners FULL COURSE in 3 Hours](https://www.youtube.com/watch?v=3c-iBn73dDE&t=0s).
-
 # Docker Crash Course In 1h.
 
 <img src="docker_1h_crashcourse.jpg" alt="alt text" width="500"/>
@@ -33,6 +27,12 @@ Linkedin puts this shit front, when clicking from private mode x(. Need to put t
 
 **Note: The material provided in this repository is only for helping those who may get stuck at any point of time in the course. It is very advised that no one should just copy the solutions(violation of Honor Code) presented here.**
 
+
+### Additional stuff.
+
+- [ ] Make combined certificate for all these software development tools. 
+
+- [ ] If time and patience take full course: [Docker Tutorial for Beginners FULL COURSE in 3 Hours](https://www.youtube.com/watch?v=3c-iBn73dDE&t=0s).
 
 ## Progress/Curriculum
 
@@ -404,7 +404,7 @@ docker run -p 9090:8080 --name app --net spring-net -e MYSQL_HOST=mysqldb -e MYS
 
 <img src="docker_1h_compose.jpg" alt="alt text" width="500"/>
 
-Tasks and notes from crash course. Made by TechWorld with **Nana**.
+Tasks and notes from crash course. Made by **TechWorld with Nana**.
 
 [Source](https://www.youtube.com/watch?v=SXwC9fSwct8)
 
@@ -421,7 +421,7 @@ Linkedin puts this shit front, when clicking from private mode x(. Need to put t
 
 **Note: The material provided in this repository is only for helping those who may get stuck at any point of time in the course. It is very advised that no one should just copy the solutions(violation of Honor Code) presented here.**
 
-# Progress/Curriculum
+# Progress/Curriculum.
 
 - [x] [Section 01](#intro-and-course-overview) - Intro and Course Overview
 - [x] [Section 02](#pre-requisites-to-learn-docker-compose) - Pre-Requisites to learn Docker Compose
@@ -438,7 +438,6 @@ Linkedin puts this shit front, when clicking from private mode x(. Need to put t
 - [ ] [Section 13](#use-image-from-private-repository) - Use image from private repository
 - [ ] [Section 14](#limitations,-docker-compose-vs-kubernetes) - Limitations, Docker Compose vs Kubernetes
 
-<hr>
 
 # Intro and Course Overview.
 
@@ -664,60 +663,65 @@ docker network rm mongo-network // Removing docker network
 
 <img src="useCases.PNG" alt="alt text" width="600"/>
 
-1.  Data will be lost when container is removed
-2.  Data will be saved
+1.  Data will be lost when container is removed.
+2.  Data will be saved.
 
-- These have different **use cases** 
+- These have different **use cases**.
 
-# Connect own web application
+# Connect own web application.
 
 - Here we will add own app to our services
 
-# Variables in Docker Compose
+# Variables in Docker Compose.
 
 - todo
 
-# Docker Compose Secrets
+# Docker Compose Secrets.
 
 - todo
 
-# Use image from private repository
+# Use image from private repository.
 
 - todo 
 
 
-# Limitations, Docker Compose vs Kubernetes
+# Limitations, Docker Compose vs Kubernetes.
 
 - todo
 
-## Kubernetes Crash Course for Absolute Beginners In 1h
+
+# Kubernetes Crash Course for Absolute Beginners In 1h
 
 <img src="kubernetes_1h.jpg" alt="alt text" width="500"/>
 
-Tasks and notes from crash course. Made by TechWorld with Nana
+Tasks and notes from crash course. Made by **TechWorld with Nana**.
 
-[Source](https://www.youtube.com/watch?v=X48VuDVv0do&t=0s)
 
-If the content sparked 🔥 your interest, please consider staring the course and start learning 📖
+[Source](https://www.youtube.com/watch?v=s_o8dwzRlu4).
 
-- [ ] If time and patience take full course: [Kubernetes Tutorial for Beginners FULL COURSE in 4 Hours](https://www.youtube.com/watch?v=pg19Z8LL06w)
+If the content sparked 🔥 your interest, please consider staring the course and start learning 📖.
 
-## Progress/Curriculum
+### Additional stuff.
 
-- [ ] [Section 01](#) - Intro and Course Overview.
-- [ ] [Section 02](#) - What is Kubernetes.
-- [ ] [Section 03](#) - Kubernetes Architecture.
-- [ ] [Section 04](#) -
-- [ ] [Section 05](#) -
-- [ ] [Section 06](#) -
-- [ ] [Section 07](#) -
-- [ ] [Section 08](#) -
-- [ ] [Section 09](#) -
-- [ ] [Section 10](#) -
-- [ ] [Section 11](#) -
-- [ ] [Section 12](#) -
-- [ ] [Section 13](#) -
+- [ ] If time and patience take full course: [Kubernetes Tutorial for Beginners FULL COURSE in 4 Hours](https://www.youtube.com/watch?v=X48VuDVv0do)
 
+## Progress/Curriculum.
+
+- [ ] [Section 01](https://github.com/developersCradle/1h-course-series-with-nana?tab=readme-ov-file#intro-and-course-overview-2) - Intro and Course Overview.
+- [ ] [Section 02](https://github.com/developersCradle/1h-course-series-with-nana?tab=readme-ov-file#intro-and-course-overview-2) - What is Kubernetes.
+- [ ] [Section 03](https://github.com/developersCradle/1h-course-series-with-nana?tab=readme-ov-file#kubernetes-architecture) - Kubernetes Architecture.
+- [ ] [Section 04](https://github.com/developersCradle/1h-course-series-with-nana?tab=readme-ov-file#node-and-pod) - Node and Pod.
+- [ ] [Section 05](https://github.com/developersCradle/1h-course-series-with-nana?tab=readme-ov-file#main-k8s-components) - Main K8s Components.
+- [ ] [Section 06](https://github.com/developersCradle/1h-course-series-with-nana?tab=readme-ov-file#node--pod) - Node & Pod.
+- [ ] [Section 07](https://github.com/developersCradle/1h-course-series-with-nana?tab=readme-ov-file#service--ingress) - Service & Ingress.
+- [ ] [Section 08](https://github.com/developersCradle/1h-course-series-with-nana?tab=readme-ov-file#configmap--secret) - ConfigMap & Secret.
+- [ ] [Section 09](https://github.com/developersCradle/1h-course-series-with-nana?tab=readme-ov-file#volume) - Volume.
+- [ ] [Section 10](https://github.com/developersCradle/1h-course-series-with-nana?tab=readme-ov-file#deployment--statefulset) - Deployment & StatefulSet.
+- [ ] [Section 11](https://github.com/developersCradle/1h-course-series-with-nana?tab=readme-ov-file#kubernetes-configuration) - Kubernetes Configuration.
+- [ ] [Section 12](https://github.com/developersCradle/1h-course-series-with-nana?tab=readme-ov-file#minikube-and-kubectl---setup-k8s-cluster-locally) - Minikube and Kubectl - Setup K8s cluster locally.
+- [ ] [Section 13](https://github.com/developersCradle/1h-course-series-with-nana?tab=readme-ov-file#complete-demo-project-deploy-webapp-with-mongodb) - Complete Demo Project: Deploy WebApp with MongoDB.
+- [ ] [Section 14](https://github.com/developersCradle/1h-course-series-with-nana?tab=readme-ov-file#interacting-with-kubernetes-cluster) - Interacting with Kubernetes Cluster.
+- [ ] [Section 15](https://github.com/developersCradle/1h-course-series-with-nana?tab=readme-ov-file#congrats-you-made-it-to-the-end) - Congrats! You made it to the end.
 
 
 # Intro and Course Overview.
@@ -760,20 +764,71 @@ If the content sparked 🔥 your interest, please consider staring the course an
 <img src="runningOnMasterServer.PNG" alt="alt text" width="600"/>
 
 1. API Server, gateway to the **K8** cluster. 
-    **1.2** This gateway can be accessed thought **UI**, **API** or **CLI**. 
+    - **1.2** This gateway can be accessed thought **UI**, **API** or **CLI**. 
+2. Keep overview what happening in **cluster**.
+3. Scheduling work and loads on node. 
+4. **etcd** has status data of nodes and configurations. Back up process is made form these **etcd** configurations.
 
+<img src="oneBigNetwork.PNG" alt="alt text" width="600"/>
 
+1. Nodes are talking together with help of this **Virtual Network**.
+    - Network turns nodes into one this **big powerful machine**.
+
+<img src="oneBigNetwork.PNG" alt="alt text" width="600"/>
+
+1. Most load will be on **Worker Nodes**, so these are most of time bigger. 
+2. **Master Node** is much more important, once you lose **Master Node**, you will lose access to the kubernetes cluster.
+3. So you will have multiple masters for backup.
+
+<img src="mainComponents.PNG" alt="alt text" width="600"/>
+
+1. Main components of **Kubernetes**. 
 
 # Node and Pod.
-- Todo
-# Main K8s Components.
-- Todo
-# Node & Pod.
-- Todo
+
+<img src="pod.PNG" alt="alt text" width="600"/>
+
+- **Node** is virtual or physical machine.
+
+1. **Pod** is smallest unit of **Kubernetes**.
+    - **Pod** is **abstraction** over container.
+
+<img src="pod1.PNG" alt="alt text" width="600"/>
+
+1. **Pod** is usually ment to run one container at the time.
+    - It is possible to run multiple container inside one **pod**. 
+2. **Kubernetes** has its own network, each **pot** get own IP address. Internal IP address.  
+3. **Pods** are **ephemeral!**
+    - **pods** can die easily.
+3. **Pod** will die to some here, and new one will get its place. 
+
+- This **new** **pod** is having **new IP address**.
+    - So, every time IP address are need to configure again!
+
+- This is where concept **Service** comes in!
+
 # Service & Ingress.
-- Todo
-# ConfigMap & Secret.
-- Todo
+
+<img src="svc.PNG" alt="alt text" width="600"/>
+
+1. **Service** can attach to **pod**, it will have own IP address.
+2. If **pod** dies, IP address of **pod** will stay! No need to change endpoint.
+
+<img src="externalService.PNG" alt="alt text" width="600"/>
+
+1. **App** should be accessible from external sources. We we need open **External Service**.
+2. **db** should not be accessible from outside. **Internal Service**.
+
+<img src="ingress.PNG" alt="alt text" width="600"/>
+
+- **Ingress**, will provide **HTTPS** and URL name for **External Service**.
+
+# ConfigMap & Secret.   
+
+
+
+
+
 # Volume.
 - Todo
 # Deployment & StatefulSet.
