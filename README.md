@@ -37,23 +37,23 @@ Linkedin puts this shit front, when clicking from private mode x(. Need to put t
 ## Progress/Curriculum
 
 - [x] [Section 01](#Intro-and-Course-Overview) - Intro and Course Overview. ✅
-- [x] [Section 02](#What-is-docker) - What is Docker?
-- [x] Section 03 - What problems Docker solves in development and deployment process
-- [x] [Section 04](#Virtual-Machine-vs-Docker) - Virtual Machine vs Docker
-- [x] Section 05 - Install Docker
-- [x] [Section 06](#Docker-Images-vs-Containers) - Docker Images vs Containers
-- [x] [Section 07](#Docker-Registries) - Docker Registries
-- [x] [Section 08](#Docker-Image-Versions) - Docker Image Versions
-- [x] [Section 09](#Pull-and-Run-Docker-containers) - Main Docker Commands - Pull and Run Docker containers
-- [x] [Section 10](#Port-Binding) - Port Binding
-- [x] [Section 11](#Start-and-Stop-containers) - Start and Stop containers
-- [x] [Section 12](#Private-Docker-Registries) - Private Docker Registries
-- [x] [Section 13](#Registry-vs-Repository) - Registry vs Repository
-- [x] [Section 14](#Dockerfile) - Dockerfile - Dockerize Node.js app
-- [x] [Section 15](#Build-Image) - Build Image
-- [x] [Section 16](#Docker-UI-Client) - Docker UI Client
+- [x] [Section 02](#What-is-docker) - What is Docker? ✅
+- [x] [Section 03](#) - What problems Docker solves in development and deployment process. ✅
+- [x] [Section 04](#Virtual-Machine-vs-Docker) - Virtual Machine vs Docker. ✅
+- [x] [Section 05](#) - Install Docker. ✅
+- [x] [Section 06](#Docker-Images-vs-Containers) - Docker Images vs Containers.
+- [x] [Section 07](#Docker-Registries) - Docker Registries.
+- [x] [Section 08](#Docker-Image-Versions) - Docker Image Versions.
+- [x] [Section 09](#Pull-and-Run-Docker-containers) - Main Docker Commands - Pull and Run Docker containers.
+- [x] [Section 10](#Port-Binding) - Port Binding.
+- [x] [Section 11](#Start-and-Stop-containers) - Start and Stop containers.
+- [x] [Section 12](#Private-Docker-Registries) - Private Docker Registries.
+- [x] [Section 13](#Registry-vs-Repository) - Registry vs Repository.
+- [x] [Section 14](#Dockerfile) - Dockerfile - Dockerize Node.js app.
+- [x] [Section 15](#Build-Image) - Build Image.
+- [x] [Section 16](#Docker-UI-Client) - Docker UI Client.
 - [x] [Section 17](#Docker-in-complete-software-development-lifecycle) - Overview: Docker in complete software development lifecycle
-- [x] Section 18 - Where to go from here
+- [x] Section 18 - Where to go from here.
 
 # Intro and Course Overview.
 
@@ -65,31 +65,75 @@ Linkedin puts this shit front, when clicking from private mode x(. Need to put t
 
 <img src="whatIsDocker.PNG" alt="alt text" width="500"/>
 
- - Before **Docker**, all developers needed to install their own setups of tools for their specific needs.
+- **Container** is packed all the different parts inside. 
+
+# What problems Docker solves in development and deployment process.
+
+- Before **Docker**, all developers needed to install their own setups of tools for their specific needs.
     - Os specific.
     - Configuration specific.
     - Etc.
 
-# Development/Deployment with Docker. 
+<img src="developementProcess.PNG" alt="alt text" width="500"/>
+
+<img src="beforeDocker.PNG" alt="alt text" width="500"/>
+
+1. Setting up environment individually different to different os.
 
 <img src="dockerDevelopementProcess.JPG" alt="alt text" width="500"/>
 
-1. All these decencies are inside container. 
+1. All these dependencies are inside container. 
 2. As **developer,** you just need to execute **one docker command** and get **docker container package** `docker run postgres`.
 
-- Docker standardizes process of running any service on any local dev environment.
-    - More time for development than setting up configuration.
+- Docker **standardizes** process of running any service on any local dev environment.
+    - **More** time for development than setting up configuration.
     - With docker you can have same service running on local device whiteout any conflict. 
+
+<img src="dockerDevelopementProcess.JPG" alt="alt text" width="500"/>
 
 <img src="deploymentProcessWithConainers.JPG" alt="alt text" width="500"/>
 
 - With containers → DevOps team just needs to fetch and run **Docker artifact**.
 
-#### Virtual Machine vs Docker.
+<img src="differentVersions.PNG" alt="alt text" width="500"/>
+
+1. Different versions of same application. **This is very** difficult without **docker**.
+
+<img src="devOpsInstallingInOldWay.PNG" alt="alt text" width="600"/>
+
+1. Old way was, develop and ship it to the devOps team, which made configuration and installation. This was very error prone.
+
+<img src="deploymentsBeforeContainers.PNG" alt="alt text" width="600"/>
+
+<img src="deploymentsAfterContainers.PNG" alt="alt text" width="600"/>
+
+- There will be **Docker Artifact** which handles.
+
+<img src="processWithContainer.PNG" alt="alt text" width="600"/>
+
+# Virtual Machine vs Docker.
+
+- Big questions below.
+
+<img src="vmVsVirtulization.PNG" alt="alt text" width="600"/>
+
+<img src="howKernerIsCommincating.PNG" alt="alt text" width="600"/>
+
+1. OS will be installing on the system and it will communicate between **different** layers.
+
+2. **Software** will be on top of application layer. This will be communicating with the **OS layer**. 
+
+<img src="bigQuestion.PNG" alt="alt text" width="600"/>
+
+- So the **big question** these both **docker** and **vm** are virtualization tools, so which layer these both **virtualize**.
+
+<img src="virtualizesBoth.PNG" alt="alt text" width="600"/>
 
 - Docker virtualize **OS Application Layer**.
 - Virtual machine virtualizes.
 **OS Application Layer** and **OS kernel** → Meaning virtualizes **complete operating system**.
+
+<img src="whatIsDifference.PNG" alt="alt text" width="600"/>
 
 - What it means:
     - Docker image is, a couple of **MB**.
@@ -108,7 +152,17 @@ Linkedin puts this shit front, when clicking from private mode x(. Need to put t
     - This is solved with **Hypervisor layer** with small Linux distro.
     `install Docker Desktop`.
 
+#  Install Docker.
+
+- Installing latest from docker website.
+
+<img src="installingDocker.PNG" alt="alt text" width="500"/>
+
 # Docker Images vs Containers.
+
+- This image is like **.zip** and **.jar** file.
+
+<img src="dockerContainirizationsAndImages.PNG" alt="alt text" width="500"/>
 
 - **Docker images** are like **.jar** a file packaged in containers.
     - It has compiled code.
@@ -116,8 +170,8 @@ Linkedin puts this shit front, when clicking from private mode x(. Need to put t
         - Application, any services(Js app)(node, npm) needed, Os Layer(Linux).
     - Add env variables, create directories.
 
-- **Docker Container** is running image
-- You can one you can run multiple container
+- **Docker Container** is running image.
+- You can one you can run multiple container.
 
 <img src="imagesAndContiners.JPG" alt="alt text" width="200"/>
 
@@ -650,4 +704,87 @@ If the content sparked 🔥 your interest, please consider staring the course an
 
 ## Progress/Curriculum
 
-- [ ] [Section 01](#)
+- [ ] [Section 01](#) - Intro and Course Overview.
+- [ ] [Section 02](#) - What is Kubernetes.
+- [ ] [Section 03](#) - Kubernetes Architecture.
+- [ ] [Section 04](#) -
+- [ ] [Section 05](#) -
+- [ ] [Section 06](#) -
+- [ ] [Section 07](#) -
+- [ ] [Section 08](#) -
+- [ ] [Section 09](#) -
+- [ ] [Section 10](#) -
+- [ ] [Section 11](#) -
+- [ ] [Section 12](#) -
+- [ ] [Section 13](#) -
+
+
+
+# Intro and Course Overview.
+
+1. Introduction.
+2. Main components
+3. Setup.
+4. Demo project.
+
+# What is Kubernetes.
+
+<img src="kubernetes.PNG" alt="alt text" width="600"/>
+
+1. There can be hundreds or thousands of containers.
+
+- What problems does **Kubernetes** solve?
+- What are the tasks of the **orchestration** tool?
+
+<img src="needForOrhestration.PNG" alt="alt text" width="600"/>
+
+- What features orchestration tool offer?
+
+<img src="offering.PNG" alt="alt text" width="600"/>
+
+1. User can access is it fast!
+2. More load when more load.
+3. Backing up data, if something goes wrong.
+
+# Kubernetes Architecture.
+
+<img src="kubernetesArchitecture.PNG" alt="alt text" width="600"/>
+
+1. At least one **master** node.
+2. **Worker Node** referred as `Nodes`
+    - These having `kubelet` process running on it.
+        - This is part of **Kubernetes**, so these nodes can communicate with each other. 
+3. Each work node has docker containers deployed on it!
+4. So **what** is running on master node? There is multiple **kubernetes** processes running here to manage the **cluster**.
+
+<img src="runningOnMasterServer.PNG" alt="alt text" width="600"/>
+
+1. API Server, gateway to the **K8** cluster. 
+    **1.2** This gateway can be accessed thought **UI**, **API** or **CLI**. 
+
+
+
+# Node and Pod.
+- Todo
+# Main K8s Components.
+- Todo
+# Node & Pod.
+- Todo
+# Service & Ingress.
+- Todo
+# ConfigMap & Secret.
+- Todo
+# Volume.
+- Todo
+# Deployment & StatefulSet.
+- Todo
+# Kubernetes Configuration.
+- Todo
+# Minikube and Kubectl - Setup K8s cluster locally.
+- Todo
+# Complete Demo Project: Deploy WebApp with MongoDB.
+- Todo
+# Interacting with Kubernetes Cluster.
+- Todo.
+# Congrats! You made it to the end.
+- Todo
