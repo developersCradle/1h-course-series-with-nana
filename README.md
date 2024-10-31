@@ -825,14 +825,62 @@ If the content sparked 🔥 your interest, please consider staring the course an
 
 # ConfigMap & Secret.   
 
+<img src="rebuildingTheApplication.PNG" alt="alt text" width="600"/>
 
+1. If the endpoint or service name will change, all of these needs to be ran. 
 
+<img src="cmExternal.PNG" alt="alt text" width="600"/>
 
+1. Kubernetes has **ConfigMap**, it will save all the URL data. 
+2. You just point to this **ConfigMap** for URL.
+
+- Saving all the non-confidential data in **ConfigMap** is risky, that why there is **Secret**.
+
+<img src="secret.PNG" alt="alt text" width="600"/>
+
+1. Passwords and user names can be also configured.
+2. There is service called **Secret** which saves passwords and user in safe way. **Kubernetes** does **not** save these in save format. **Kubernetes** advices to use **3rd** party tools to encrypt the passwords.
+3. We just need to connect this one to the **pod**.
+4. **PRO TIP**. We can use secret references in properties file or in env variable.
+
+-  This **Secret** can have passwords, certificates and other things which needs to be encrypted.
 
 # Volume.
-- Todo
+
+- Whiteout **Volumes** data would be lost from db when restarted.
+
+<img src="volume.PNG" alt="alt text" width="600"/>
+
+1. Attaches hard drive to your **pod** or **remote** storage.
+
+- Now when database pod is restarted, all the data is persisted.
+
+<img src="kubernetesData.PNG" alt="alt text" width="600"/>
+
+1. Its admins job to handle kubernetes data into right place.
+
 # Deployment & StatefulSet.
-- Todo
+
+- We are replicating on **pod** in multiple servers.
+    - In case if **pod** dies.
+
+<img src="loadBalancer.PNG" alt="alt text" width="600"/>
+
+1. Node being replicated and connected trough **service**.
+
+- Service having, **permanent IP** and **load balancer**.
+
+<img src="bluePrint.PNG" alt="alt text" width="600"/>
+
+- For replicating pod we would.
+
+1. Define **blueprint** for Pods and use this **blueprint** for creating much of replicas as needed.
+
+- This is called **deploy** in Kubernetes.
+
+<img src="deploy.PNG" alt="alt text" width="600"/>
+
+
 # Kubernetes Configuration.
 - Todo
 # Minikube and Kubectl - Setup K8s cluster locally.
