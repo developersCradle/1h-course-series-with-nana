@@ -707,16 +707,16 @@ If the content sparked 🔥 your interest, please consider staring the course an
 
 ## Progress/Curriculum.
 
-- [ ] [Section 01](https://github.com/developersCradle/1h-course-series-with-nana?tab=readme-ov-file#intro-and-course-overview-2) - Intro and Course Overview.
-- [ ] [Section 02](https://github.com/developersCradle/1h-course-series-with-nana?tab=readme-ov-file#intro-and-course-overview-2) - What is Kubernetes.
-- [ ] [Section 03](https://github.com/developersCradle/1h-course-series-with-nana?tab=readme-ov-file#kubernetes-architecture) - Kubernetes Architecture.
-- [ ] [Section 04](https://github.com/developersCradle/1h-course-series-with-nana?tab=readme-ov-file#node-and-pod) - Node and Pod.
-- [ ] [Section 05](https://github.com/developersCradle/1h-course-series-with-nana?tab=readme-ov-file#main-k8s-components) - Main K8s Components.
-- [ ] [Section 06](https://github.com/developersCradle/1h-course-series-with-nana?tab=readme-ov-file#node--pod) - Node & Pod.
-- [ ] [Section 07](https://github.com/developersCradle/1h-course-series-with-nana?tab=readme-ov-file#service--ingress) - Service & Ingress.
-- [ ] [Section 08](https://github.com/developersCradle/1h-course-series-with-nana?tab=readme-ov-file#configmap--secret) - ConfigMap & Secret.
-- [ ] [Section 09](https://github.com/developersCradle/1h-course-series-with-nana?tab=readme-ov-file#volume) - Volume.
-- [ ] [Section 10](https://github.com/developersCradle/1h-course-series-with-nana?tab=readme-ov-file#deployment--statefulset) - Deployment & StatefulSet.
+- [x] [Section 01](https://github.com/developersCradle/1h-course-series-with-nana?tab=readme-ov-file#intro-and-course-overview-2) - Intro and Course Overview. ✅
+- [x] [Section 02](https://github.com/developersCradle/1h-course-series-with-nana?tab=readme-ov-file#intro-and-course-overview-2) - What is Kubernetes. ✅
+- [x] [Section 03](https://github.com/developersCradle/1h-course-series-with-nana?tab=readme-ov-file#kubernetes-architecture) - Kubernetes Architecture. ✅
+- [x] [Section 04](https://github.com/developersCradle/1h-course-series-with-nana?tab=readme-ov-file#node-and-pod) - Node and Pod. ✅
+- [x] [Section 05](https://github.com/developersCradle/1h-course-series-with-nana?tab=readme-ov-file#main-k8s-components) - Main K8s Components. ✅
+- [x] [Section 06](https://github.com/developersCradle/1h-course-series-with-nana?tab=readme-ov-file#node--pod) - Node & Pod. ✅
+- [x] [Section 07](https://github.com/developersCradle/1h-course-series-with-nana?tab=readme-ov-file#service--ingress) - Service & Ingress. ✅
+- [x] [Section 08](https://github.com/developersCradle/1h-course-series-with-nana?tab=readme-ov-file#configmap--secret) - ConfigMap & Secret. ✅
+- [x] [Section 09](https://github.com/developersCradle/1h-course-series-with-nana?tab=readme-ov-file#volume) - Volume. ✅
+- [x] [Section 10](https://github.com/developersCradle/1h-course-series-with-nana?tab=readme-ov-file#deployment--statefulset) - Deployment & StatefulSet. ✅
 - [ ] [Section 11](https://github.com/developersCradle/1h-course-series-with-nana?tab=readme-ov-file#kubernetes-configuration) - Kubernetes Configuration.
 - [ ] [Section 12](https://github.com/developersCradle/1h-course-series-with-nana?tab=readme-ov-file#minikube-and-kubectl---setup-k8s-cluster-locally) - Minikube and Kubectl - Setup K8s cluster locally.
 - [ ] [Section 13](https://github.com/developersCradle/1h-course-series-with-nana?tab=readme-ov-file#complete-demo-project-deploy-webapp-with-mongodb) - Complete Demo Project: Deploy WebApp with MongoDB.
@@ -876,13 +876,58 @@ If the content sparked 🔥 your interest, please consider staring the course an
 
 1. Define **blueprint** for Pods and use this **blueprint** for creating much of replicas as needed.
 
-- This is called **deploy** in Kubernetes.
+- This is called **deploy** in Kubernetes components.
 
 <img src="deploy.PNG" alt="alt text" width="600"/>
 
+- You will not be creating **pods**, you will be creating **deployments**.
+    - In **deployments** you can scale down or up.
+
+<img src="podDies.PNG" alt="alt text" width="600"/>
+
+1. When **pod** dies, other one will take its place.
+
+<img src="dbDeployments.PNG" alt="alt text" width="600"/>
+
+1. We can't **replicate** via Deployment!
+
+<img src="dbShared.PNG" alt="alt text" width="600"/>
+
+1. We need to control who access data inside db.
+    - Mechanics needed which **pod**  is reading or writing to the specific database . 
+
+<img src="statefullness.PNG" alt="alt text" width="600"/>
+
+- **statefulset** kubernetes components.
+
+<img src="deploymentAndStatefull.PNG" alt="alt text" width="600"/>
+
+1. **StatefulSet** should be used when want to use of stateful features. 
+
+- **StatefulSet** in usage of kubernetes cluster can be **difficult**.
+
+- DB are often hosted **outside** of Kubernetes cluster.
+
+## Summary, popular Kubernetes components.
+
+<img src="main1.PNG" alt="alt text" width="600"/>
+
+<img src="main2.PNG" alt="alt text" width="600"/>
+
+<img src="main3.PNG" alt="alt text" width="600"/>
+
+<img src="main4.PNG" alt="alt text" width="600"/>
+
+- These **core** components, we can build kubernetes clusters.
 
 # Kubernetes Configuration.
-- Todo
+
+<img src="kubernetesConfiguration.PNG" alt="alt text" width="700"/>
+
+1. All **Kubernetes** nodes goes trough **API SERVER**. 
+
+
+
 # Minikube and Kubectl - Setup K8s cluster locally.
 - Todo
 # Complete Demo Project: Deploy WebApp with MongoDB.
