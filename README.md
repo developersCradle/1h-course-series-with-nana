@@ -717,8 +717,8 @@ If the content sparked 🔥 your interest, please consider staring the course an
 - [x] [Section 08](https://github.com/developersCradle/1h-course-series-with-nana?tab=readme-ov-file#configmap--secret) - ConfigMap & Secret. ✅
 - [x] [Section 09](https://github.com/developersCradle/1h-course-series-with-nana?tab=readme-ov-file#volume) - Volume. ✅
 - [x] [Section 10](https://github.com/developersCradle/1h-course-series-with-nana?tab=readme-ov-file#deployment--statefulset) - Deployment & StatefulSet. ✅
-- [ ] [Section 11](https://github.com/developersCradle/1h-course-series-with-nana?tab=readme-ov-file#kubernetes-configuration) - Kubernetes Configuration.
-- [ ] [Section 12](https://github.com/developersCradle/1h-course-series-with-nana?tab=readme-ov-file#minikube-and-kubectl---setup-k8s-cluster-locally) - Minikube and Kubectl - Setup K8s cluster locally.
+- [x] [Section 11](https://github.com/developersCradle/1h-course-series-with-nana?tab=readme-ov-file#kubernetes-configuration) - Kubernetes Configuration. ✅
+- [ ] [Section 12](https://github.com/developersCradle/1h-course-series-with-nana?tab=readme-ov-file#minikube-and-kubectl---setup-k8s-cluster-locally) - Minikube and Kubectl - Setup K8s cluster locally. 
 - [ ] [Section 13](https://github.com/developersCradle/1h-course-series-with-nana?tab=readme-ov-file#complete-demo-project-deploy-webapp-with-mongodb) - Complete Demo Project: Deploy WebApp with MongoDB.
 - [ ] [Section 14](https://github.com/developersCradle/1h-course-series-with-nana?tab=readme-ov-file#interacting-with-kubernetes-cluster) - Interacting with Kubernetes Cluster.
 - [ ] [Section 15](https://github.com/developersCradle/1h-course-series-with-nana?tab=readme-ov-file#congrats-you-made-it-to-the-end) - Congrats! You made it to the end.
@@ -958,8 +958,47 @@ If the content sparked 🔥 your interest, please consider staring the course an
 
 1. **Kubernetes** will add here status of deployment and updates it constantly.
 
+<img src="replica.JPG" alt="alt text" width="700"/>
+
+1. If only **one** replica is detected to be running by **comparing** the specification.
+
+2. Another replica needs to be created **ASAP** .
+
+<img src="statusData.JPG" alt="alt text" width="700"/>
+
+1.  Where does **K8** gets this status data?
+
+<img src="etcd.JPG" alt="alt text" width="700"/>
+
+1. **ETCD** holds any **data** of k8 component! So, it also holds **status** data.
+
+<img src="yamlConfigurationFIles.JPG" alt="alt text" width="700"/>
+
+- These configurations files are usually stored **with you code**.
+    - Or **own** git repository.
+
 # Minikube and Kubectl - Setup K8s cluster locally.
-- Todo
+
+<img src="minicupes.JPG" alt="alt text" width="700"/>
+
+1. In production there is usually multiple **Masters**.
+2. There is also multiple **Worker Nodes**.
+3. These have all have separate responsibilities. **Master** and **Node**. So there will be separate virtual or physical machines, which each represent node.
+
+- Setting up **cluster** like this will be difficult, since it needs lot of **resources**. 
+    - CPU, Memory etc...
+
+<img src="minicupe.JPG" alt="alt text" width="700"/>
+
+- **Minikube** tool which has  one node cluster. Which has **master processes** and **Worker processes** running inside **one** machine.
+
+- It has docker pre-installed.
+
+<img src="whatIsKubeCtl.JPG" alt="alt text" width="700">
+
+1. **Kubectl** is tool to interact with cluster.
+    - Create pods or other k8 components.
+
 # Complete Demo Project: Deploy WebApp with MongoDB.
 - Todo
 # Interacting with Kubernetes Cluster.
