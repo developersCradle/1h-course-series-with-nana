@@ -1,8 +1,8 @@
 # 1h Crash Course Series Proceeding Order.
 
-- [x] [First step 01](#docker-crash-course-in-1h) - Docker Crash Course for Absolute Beginners.
+- [x] [First step 01](#docker-crash-course-in-1h) - Docker Crash Course for Absolute Beginners. ✅
 - [ ] [Second step 02](#learn-docker-compose-in-1h) - Learn Docker Compose - From Zero to Hero in 1 Hour. 
-    - [x] [Good to Know - Prerequisite step](https://github.com/developersCradle/1h-course-series-with-nana/tree/main/yaml#yaml_cerificate) - Yaml Tutorial | Learn YAML in 18 mins. 
+    - [x] [Good to Know - Prerequisite step](https://github.com/developersCradle/1h-course-series-with-nana/tree/main/yaml#yaml_cerificate) - Yaml Tutorial | Learn YAML in 18 mins. ✅
     - [ ] [Good to Know - Prerequisite step](#) - Microservices explained - the What, Why and How?
 - [ ] [Third step 03](#kubernetes-crash-course-for-absolute-beginners-in-1h) - Kubernetes Crash Course for Absolute Beginners. 
 
@@ -616,7 +616,7 @@ docker network rm mongo-network // Removing docker network
 
 # Control Startup Order
 
-- When multiple services
+- When multiple services.
     - When we need db before front-end
 
 - This decency can be done using `depends_on`
@@ -696,8 +696,8 @@ docker network rm mongo-network // Removing docker network
 
 Tasks and notes from crash course. Made by **TechWorld with Nana**.
 
-
 [Source](https://www.youtube.com/watch?v=s_o8dwzRlu4).
+[GitLab](https://gitlab.com/nanuchi/k8s-in-1-hour).
 
 If the content sparked 🔥 your interest, please consider staring the course and start learning 📖.
 
@@ -924,9 +924,39 @@ If the content sparked 🔥 your interest, please consider staring the course an
 
 <img src="kubernetesConfiguration.PNG" alt="alt text" width="700"/>
 
-1. All **Kubernetes** nodes goes trough **API SERVER**. 
+1. All nodes which **Kubernetes**  has goes trough **API SERVER**. 
+    - All of these requests can be made trough **UI**, **API** and **CLI**.
 
+2. Configuration for creating component called `deployment`.
 
+- Kubernetes **configuration** has **three** parts.
+
+<img src="metaDataInConfigurationdata.JPG" alt="alt text" width="700"/>
+
+- **First part** is **metadata** of component.
+
+<img src="spesifications.JPG" alt="alt text" width="700"/>
+
+- **Second part** is **specifications**. We put here configuration what we wan't to apply to that component.
+
+<img src="kindOfdeployment.JPG" alt="alt text" width="700"/>
+
+- **spec** are **specific** to the **kind**  of configuration.
+
+- The **Third part** is a **status**.
+
+<img src="status.JPG" alt="alt text" width="700"/>
+
+- **Status** is automatically generated and added by **Kubernetes**.
+
+<img src="selfRecovery.JPG" alt="alt text" width="700"/>
+
+- When **Kubernetes** notices difference between **Desired** and **Actual** state. **Kubernetes** tries to fix this using its **self-recovery** features.
+    - Example here, we want **two** replicas of `nginx` deployment. 
+
+<img src="k8.JPG" alt="alt text" width="700"/>
+
+1. **Kubernetes** will add here status of deployment and updates it constantly.
 
 # Minikube and Kubectl - Setup K8s cluster locally.
 - Todo
