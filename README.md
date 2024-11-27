@@ -718,7 +718,7 @@ If the content sparked 🔥 your interest, please consider staring the course an
 - [x] [Section 09](https://github.com/developersCradle/1h-course-series-with-nana?tab=readme-ov-file#volume) - Volume. ✅
 - [x] [Section 10](https://github.com/developersCradle/1h-course-series-with-nana?tab=readme-ov-file#deployment--statefulset) - Deployment & StatefulSet. ✅
 - [x] [Section 11](https://github.com/developersCradle/1h-course-series-with-nana?tab=readme-ov-file#kubernetes-configuration) - Kubernetes Configuration. ✅
-- [ ] [Section 12](https://github.com/developersCradle/1h-course-series-with-nana?tab=readme-ov-file#minikube-and-kubectl---setup-k8s-cluster-locally) - Minikube and Kubectl - Setup K8s cluster locally. 
+- [x] [Section 12](https://github.com/developersCradle/1h-course-series-with-nana?tab=readme-ov-file#minikube-and-kubectl---setup-k8s-cluster-locally) - Minikube and Kubectl - Setup K8s cluster locally. ✅
 - [ ] [Section 13](https://github.com/developersCradle/1h-course-series-with-nana?tab=readme-ov-file#complete-demo-project-deploy-webapp-with-mongodb) - Complete Demo Project: Deploy WebApp with MongoDB.
 - [ ] [Section 14](https://github.com/developersCradle/1h-course-series-with-nana?tab=readme-ov-file#interacting-with-kubernetes-cluster) - Interacting with Kubernetes Cluster.
 - [ ] [Section 15](https://github.com/developersCradle/1h-course-series-with-nana?tab=readme-ov-file#congrats-you-made-it-to-the-end) - Congrats! You made it to the end.
@@ -999,9 +999,66 @@ If the content sparked 🔥 your interest, please consider staring the course an
 1. **Kubectl** is tool to interact with cluster.
     - Create pods or other k8 components.
 
+<img src="kubeCTL.JPG" alt="alt text" width="700">
+
+1. **Api Server** is main entry point to the **K8 cluster**.
+2. To talk to **Api Server** is trough different client. **KUBECTL** is most powerful of three clients.
+3. Once **kubectl** submits command to the server. **Worker processes** will make things happen.
+    - Create pods ... etc.
+
+<img src="kubectlCanbeUsed.JPG" alt="alt text" width="700">
+
+1. **Kubectl** can be used to interact with **Minikube cluster** or with **Cloud cluster**.
+    - This can be interact with any type of **cluster** type.
+
+- There is many ways to start **minikube**.
+    - Container.
+    - Virtual Machine.
+
+<img src="runningMiniKube.JPG" alt="alt text" width="700">
+
+- Instructions for starting. [Minikube start](https://minikube.sigs.k8s.io/docs/start/?arch=%2Fwindows%2Fx86-64%2Fstable%2F.exe+download).
+
+<img src="miniKubeCanBeRanWith.JPG" alt="alt text" width="700">
+
+1. If **minikube** will be ran as **Container**. 
+    - You need **driver** installed as following, example. **Docker**.
+
+2. If **minikube** will be ran as **Virtual Machine**. 
+    - You need **driver** installed as following, example. **VirtualBox**.
+
+- **Docker** is recommended driver to be used with any situation.
+
+<img src="2Layers.JPG" alt="alt text" width="700">
+
+1. **minikube** comes with docker runtime and also driver for **minikube** where its hosted itself.
+
+- There will be layers of **docker**.
+
+<img src="2LayersSecond.JPG" alt="alt text" width="700">
+
+- Starting **minikube** with driver. `minikube start --driver docker`.
+
+- Asking status. `minikube status`.
+
+- `kubectl` get installed as dependency when install **minikube**.
+
+<img src="kubectlCommand.JPG" alt="alt text" width="700">
+
+1. We can get status of the nodes in the cluster. `kubectl get node`.
+
+<img src="differentTools.JPG" alt="alt text" width="700">
+
 # Complete Demo Project: Deploy WebApp with MongoDB.
-- Todo
+
+<img src="kubernetesDeployment.JPG" alt="alt text" width="700">
+
+1. In cluster we will have **webapp** and **mongodb**.
+
 # Interacting with Kubernetes Cluster.
+
 - Todo.
+
 # Congrats! You made it to the end.
+
 - Todo
