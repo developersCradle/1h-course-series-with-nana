@@ -697,6 +697,7 @@ docker network rm mongo-network // Removing docker network
 Tasks and notes from crash course. Made by **TechWorld with Nana**.
 
 [Source](https://www.youtube.com/watch?v=s_o8dwzRlu4).
+
 [GitLab](https://gitlab.com/nanuchi/k8s-in-1-hour).
 
 If the content sparked 🔥 your interest, please consider staring the course and start learning 📖.
@@ -1053,7 +1054,151 @@ If the content sparked 🔥 your interest, please consider staring the course an
 
 <img src="kubernetesDeployment.JPG" alt="alt text" width="700">
 
-1. In cluster we will have **webapp** and **mongodb**.
+1. In cluster we will have **Webapp** and **Mongodb**.
+    - Which will get configurations form **Secret** and **ConfigMap**.
+
+<img src="creatingConfigurations.JPG" alt="alt text" width="700">
+
+1. We will crate 4 **K8** configurations.
+    - For **ConfigMap**.
+    - For **Secret**.
+    - Configurations for **MongoDB**.
+    - Configuration for **WebApp**.
+
+- We can use **kubernetes** documentation. Example for config map format.
+
+<img src="formatOfConfigMap.JPG" alt="alt text" width="700">
+
+- Example of **ConfigMap**.
+
+<img src="configMapConfiguration.JPG" alt="alt text" width="700">
+
+- Example of **ConfigMap**.
+
+```
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: mongo-config
+data:
+  mongo-url: mongo-service # This will be Service name of the MongoDB. This will be endpoint of MongoDB.
+```
+
+<img src="secretConfiguration.JPG" alt="alt text" width="700">
+
+- You can encode text using **git bash**  `echo -n mongopassword | base64`.
+    - These can be used for kubernetes **secret**.
+
+- Example of **Secret**.
+
+```
+apiVersion: v1
+kind: Secret
+metadata:
+  name: mongo-secret
+type: Opaque
+data:
+  mongo-user: bW9uZ291c2Vy
+  mongo-password: bW9uZ29wYXNzd29yZA== 
+
+```
+
+<img src="referenceSecretAndConfigMap.JPG" alt="alt text" width="700">
+
+1. We can reference these ones from different **deployments**.
+
+<img src="mongoDeployment.JPG" alt="alt text" width="700">
+
+1. `template` is **Configuration** for the **Pod**.
+2. `containers` you can have multiple containers within the **pod**.
+3. These usually are images form docker hub.
+
+- We will be using latest at the time `8.0` [Latest to the docker hub.](https://hub.docker.com/layers/library/mongo/8.0/images/sha256-25c45597712d8f37915a52a172ce927ab197bcb764e81364df4c492083a20154?context=explore)
+
+<img src="labels.JPG" alt="alt text" width="700">
+
+1. In **K8** you can label any component with the **label**.
+    - Adds additional label for identification.
+
+<img src="labels2.JPG" alt="alt text" width="700">
+
+1. When you have multiple **replicas** from same **pod**. Every **Pod** has unique name.
+2. These can share common **label**.
+    - You can tell that these are shared form same **pod**.
+
+- **Important**. Every pod needs **label**!!
+
+<img src="labelSelector.JPG" alt="alt text" width="700">
+
+- We use **Selectors** for identifying **pod replicas** for specific **deployment**.
+
+- Pods with `nginx` label which matches to the deployments label `nginx`, are grouped together.
+
+- Standard for naming labels is using `app` for given label.  
+    - Example. `app: nginx`.
+
+-  `replicas: 1` how many replicas we want from this deployment.
+    - For database we don't want use **deployment**, we want **stateful set**.
+
+<img src="serviceConfiguration.JPG" alt="alt text" width="700">
+
+1. Service needs to forwards the request to specific pod.
+
+<img src="serviceConfiguration2.jpg" alt="alt text" width="700">
+
+
+<img src="portsOfService.JPG" alt="alt text" width="700">
+
+1. Port of where the request is coming into.
+    - **Port of the service**.
+2. Which port request is forwarded into, port of the **pod**. `targetPort` should be `containerPort`.
+    - **Which port request is forwarded into in the pods**
+
+- Example of **Deployment configuration**.
+
+```
+#  Deployment  & Service in one file.
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mongo-deployment
+  labels: # label for  deployment is optional, but recommended.
+    app: mongo
+spec:
+  replicas: 1 # how many pods using this blueprint.
+  selector:
+    matchLabels:
+      app: mongo # Standard is using app, and the label name.
+  template:
+    metadata:
+      labels: # For pods this is required.
+        app: mongo 
+    spec:
+      containers:
+      - name: mongodb
+        image: mongo:8.0 # We are using 5.0 image version.
+        ports:
+        - containerPort: 27017
+```
+
+- Example of **Service configuration**.
+
+```
+# Service Configuration.
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: mongo-service # This is name of the service, which is used to access mongo.
+spec:
+  selector: # Points to the Pod where this service belongs to.
+    app: mongo # The label of the pod.
+  ports:
+    - protocol: TCP
+      port: 9376 # Port of service. Standard these should be same.
+      targetPort: 9376 # Port where to forward into. Standard these should be same.
+```
 
 # Interacting with Kubernetes Cluster.
 
