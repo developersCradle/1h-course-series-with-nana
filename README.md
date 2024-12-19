@@ -720,7 +720,7 @@ If the content sparked 🔥 your interest, please consider staring the course an
 - [x] [Section 10](https://github.com/developersCradle/1h-course-series-with-nana?tab=readme-ov-file#deployment--statefulset) - Deployment & StatefulSet. ✅
 - [x] [Section 11](https://github.com/developersCradle/1h-course-series-with-nana?tab=readme-ov-file#kubernetes-configuration) - Kubernetes Configuration. ✅
 - [x] [Section 12](https://github.com/developersCradle/1h-course-series-with-nana?tab=readme-ov-file#minikube-and-kubectl---setup-k8s-cluster-locally) - Minikube and Kubectl - Setup K8s cluster locally. ✅
-- [ ] [Section 13](https://github.com/developersCradle/1h-course-series-with-nana?tab=readme-ov-file#complete-demo-project-deploy-webapp-with-mongodb) - Complete Demo Project: Deploy WebApp with MongoDB.
+- [x] [Section 13](https://github.com/developersCradle/1h-course-series-with-nana?tab=readme-ov-file#complete-demo-project-deploy-webapp-with-mongodb) - Complete Demo Project: Deploy WebApp with MongoDB. ✅
 - [ ] [Section 14](https://github.com/developersCradle/1h-course-series-with-nana?tab=readme-ov-file#interacting-with-kubernetes-cluster) - Interacting with Kubernetes Cluster.
 - [ ] [Section 15](https://github.com/developersCradle/1h-course-series-with-nana?tab=readme-ov-file#congrats-you-made-it-to-the-end) - Congrats! You made it to the end.
 
@@ -1146,7 +1146,6 @@ data:
 
 <img src="serviceConfiguration2.jpg" alt="alt text" width="700">
 
-
 <img src="portsOfService.JPG" alt="alt text" width="700">
 
 1. Port of where the request is coming into.
@@ -1180,7 +1179,7 @@ spec:
         image: mongo:8.0 # We are using 5.0 image version.
         ports:
         - containerPort: 27017
-```
+``` 
 
 - Example of **Service configuration**.
 
@@ -1200,9 +1199,124 @@ spec:
       targetPort: 9376 # Port where to forward into. Standard these should be same.
 ```
 
+<img src="passingCredits.PNG" alt="alt text" width="700">
+
+1. We need to pass **Secret** and **CofigMap** the pods.
+
+<img src="refSercret.PNG" alt="alt text" width="700">
+
+1. We are referring **Secret** like such.
+
+- We refer to **ConfigMap** with similiar way. 
+
+```
+   - name: DB_URL
+          valueFrom:
+            configMapKeyRef:
+              name: mongo-config
+              key: mongo-url
+```
+
+- We can use **NodePort** for making app accessible from external call.
+
+<img src="usingNode.PNG" alt="alt text" width="400">
+
+1. **NodePorts** are the port which will be opened to the **K8** **Nodes**.
+
+- [NodePort documentation](https://kubernetes.io/docs/concepts/services-networking/service/#type-nodeport).
+
+<img src="getPod.PNG" alt="alt text" width="600"/>
+
+- We have **minicube** cluster running, but there is now component running. 
+- Getting pod `kubectl get pod`
+    - Before this one need **ConfigMap** and **Secret** must be existing before Deployments.
+
+- We need components before **referencing** those components. 
+
+<img src="creatingComponent.PNG" alt="alt text" width="600"/>
+
+- Deploying to the **k8** with `apply` takes **k8** file as input. 
+    - Following commands:
+
+```
+kubectl apply -f mongo-config.yaml
+kubectl apply -f mongo-secret.yaml
+kubectl apply -f mongo.yaml
+kubectl apply -f webapp.yaml
+```
+
+- My `webapp.yaml` and docker hub image [DockerHub Image](https://hub.docker.com/r/nanajanashia/k8s-demo-app).
+
+```
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: webapp-deployment
+  labels:
+    app: webapp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: webapp
+  template:
+    metadata:
+      labels:
+        app: webapp
+    spec:
+      containers:
+      - name: webapp
+        image: nanajanashia/k8s-demo-app:v1.0
+        ports:
+        - containerPort: 3000
+        env:
+        - name: USER_NAME
+          valueFrom:
+            secretKeyRef:
+              name: mongo-secret
+              key: mongo-user
+        - name: USER_PWD
+          valueFrom:
+            secretKeyRef:
+              name: mongo-secret
+              key: mongo-password 
+        - name: DB_URL
+          valueFrom:
+            configMapKeyRef:
+              name: mongo-config
+              key: mongo-url
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: webapp-service
+spec:
+  type: NodePort
+  selector:
+    app: webapp
+  ports:
+    - protocol: TCP
+      port: 3000
+      targetPort: 3000
+      nodePort: 30100
+```
+
+<img src="referingToConfigMapOrSecretBenefit.PNG" alt="alt text" width="400">
+
+- We only need to refer one **Secret** from many **Deployments**.
+
 # Interacting with Kubernetes Cluster.
 
-- Todo.
+- All the components created form the **cluster**. `kubectl get all`
+    - Example below.
+
+<img src="differentComponentsInTheCluster.PNG" alt="alt text" width="500">
+
+
+
+
+
+
 
 # Congrats! You made it to the end.
 
