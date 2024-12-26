@@ -4,7 +4,7 @@
 - [ ] [Second step 02](#learn-docker-compose-in-1h) - Learn Docker Compose - From Zero to Hero in 1 Hour. 
     - [x] [Good to Know - Prerequisite step](https://github.com/developersCradle/1h-course-series-with-nana/tree/main/yaml#yaml_cerificate) - Yaml Tutorial | Learn YAML in 18 mins. ✅
     - [ ] [Good to Know - Prerequisite step](#) - Microservices explained - the What, Why and How?
-- [ ] [Third step 03](#kubernetes-crash-course-for-absolute-beginners-in-1h) - Kubernetes Crash Course for Absolute Beginners. 
+- [x] [Third step 03](#kubernetes-crash-course-for-absolute-beginners-in-1h) - Kubernetes Crash Course for Absolute Beginners. ✅
 
 # Docker Crash Course In 1h.
 
@@ -57,7 +57,7 @@ Linkedin puts this shit front, when clicking from private mode x(. Need to put t
 
 # Intro and Course Overview.
 
-- We wil be covering following:
+- We will be covering following:
 
 <img src="courseOverview.PNG" alt="alt text" width="500"/>
 
@@ -78,7 +78,7 @@ Linkedin puts this shit front, when clicking from private mode x(. Need to put t
 
 <img src="beforeDocker.PNG" alt="alt text" width="500"/>
 
-1. Setting up environment individually different to different os.
+1. Setting up environment individually different to different **OS**.
 
 <img src="dockerDevelopementProcess.JPG" alt="alt text" width="500"/>
 
@@ -87,7 +87,7 @@ Linkedin puts this shit front, when clicking from private mode x(. Need to put t
 
 - Docker **standardizes** process of running any service on any local dev environment.
     - **More** time for development than setting up configuration.
-    - With docker you can have same service running on local device whiteout any conflict. 
+    - With **Docker**, you can have same service running on local device whiteout any conflict. 
 
 <img src="dockerDevelopementProcess.JPG" alt="alt text" width="500"/>
 
@@ -101,7 +101,7 @@ Linkedin puts this shit front, when clicking from private mode x(. Need to put t
 
 <img src="devOpsInstallingInOldWay.PNG" alt="alt text" width="600"/>
 
-1. Old way was, develop and ship it to the devOps team, which made configuration and installation. This was very error prone.
+1. Old way was, develop and ship it to the DevOps team, which made configuration and installation. This was very error-prone.
 
 <img src="deploymentsBeforeContainers.PNG" alt="alt text" width="600"/>
 
@@ -119,7 +119,7 @@ Linkedin puts this shit front, when clicking from private mode x(. Need to put t
 
 <img src="howKernerIsCommincating.PNG" alt="alt text" width="600"/>
 
-1. OS will be installing on the system and it will communicate between **different** layers.
+1. OS will be installing on the system, and it will communicate between **different** layers.
 
 2. **Software** will be on top of application layer. This will be communicating with the **OS layer**. 
 
@@ -514,7 +514,7 @@ docker run -d -p 8081:8081 -e ME_CONFIG_MONGODB_ADMINUSERNAME=admin -e ME_CONFIG
 ```
 
 - To try if these work go to `http://localhost:8081/` and log in
-    - **mongoDB** depends on **mongo-express** and to communicate each other **isolated virtual network** must be configured and working!
+    - **MongoDB** depends on **mongo-express** and to communicate each other **isolated virtual network** must be configured and working!
 
 # Why Docker Compose.
 
@@ -690,7 +690,8 @@ docker network rm mongo-network // Removing docker network
 - todo
 
 
-# Kubernetes Crash Course for Absolute Beginners In 1h
+# Kubernetes Crash Course for Absolute Beginners In 1h.
+
 
 <img src="kubernetes_1h.jpg" alt="alt text" width="500"/>
 
@@ -701,6 +702,8 @@ Tasks and notes from crash course. Made by **TechWorld with Nana**.
 [GitLab](https://gitlab.com/nanuchi/k8s-in-1-hour).
 
 If the content sparked 🔥 your interest, please consider staring the course and start learning 📖.
+
+<img id="certificate_k8?trk=public_profile_see-credential" src="k8_1h_series_certificate.png" alt="alt text" width="500"/>
 
 ### Additional stuff.
 
@@ -721,8 +724,8 @@ If the content sparked 🔥 your interest, please consider staring the course an
 - [x] [Section 11](https://github.com/developersCradle/1h-course-series-with-nana?tab=readme-ov-file#kubernetes-configuration) - Kubernetes Configuration. ✅
 - [x] [Section 12](https://github.com/developersCradle/1h-course-series-with-nana?tab=readme-ov-file#minikube-and-kubectl---setup-k8s-cluster-locally) - Minikube and Kubectl - Setup K8s cluster locally. ✅
 - [x] [Section 13](https://github.com/developersCradle/1h-course-series-with-nana?tab=readme-ov-file#complete-demo-project-deploy-webapp-with-mongodb) - Complete Demo Project: Deploy WebApp with MongoDB. ✅
-- [ ] [Section 14](https://github.com/developersCradle/1h-course-series-with-nana?tab=readme-ov-file#interacting-with-kubernetes-cluster) - Interacting with Kubernetes Cluster.
-- [ ] [Section 15](https://github.com/developersCradle/1h-course-series-with-nana?tab=readme-ov-file#congrats-you-made-it-to-the-end) - Congrats! You made it to the end.
+- [x] [Section 14](https://github.com/developersCradle/1h-course-series-with-nana?tab=readme-ov-file#interacting-with-kubernetes-cluster) - Interacting with Kubernetes Cluster. ✅
+- [x] [Section 15](https://github.com/developersCradle/1h-course-series-with-nana?tab=readme-ov-file#congrats-you-made-it-to-the-end) - Congrats! You made it to the end. ✅
 
 
 # Intro and Course Overview.
@@ -1010,11 +1013,11 @@ If the content sparked 🔥 your interest, please consider staring the course an
 <img src="kubectlCanbeUsed.JPG" alt="alt text" width="700">
 
 1. **Kubectl** can be used to interact with **Minikube cluster** or with **Cloud cluster**.
-    - This can be interact with any type of **cluster** type.
+    - This can be interacted with any type of **cluster** type.
 
-- There is many ways to start **minikube**.
-    - Container.
-    - Virtual Machine.
+- There are multiple ways to launch **minikube**.
+    - **One** is Container.
+    - **Other is** Virtual Machine.
 
 <img src="runningMiniKube.JPG" alt="alt text" width="700">
 
@@ -1054,7 +1057,7 @@ If the content sparked 🔥 your interest, please consider staring the course an
 
 <img src="kubernetesDeployment.JPG" alt="alt text" width="700">
 
-1. In cluster we will have **Webapp** and **Mongodb**.
+1. In cluster, we will have **Webapp** and **Mongodb**.
     - Which will get configurations form **Secret** and **ConfigMap**.
 
 <img src="creatingConfigurations.JPG" alt="alt text" width="700">
@@ -1105,15 +1108,15 @@ data:
 
 <img src="referenceSecretAndConfigMap.JPG" alt="alt text" width="700">
 
-1. We can reference these ones from different **deployments**.
+1. We can reference these from different **deployments**.
 
 <img src="mongoDeployment.JPG" alt="alt text" width="700">
 
 1. `template` is **Configuration** for the **Pod**.
 2. `containers` you can have multiple containers within the **pod**.
-3. These usually are images form docker hub.
+3. These are usually images form docker hub.
 
-- We will be using latest at the time `8.0` [Latest to the docker hub.](https://hub.docker.com/layers/library/mongo/8.0/images/sha256-25c45597712d8f37915a52a172ce927ab197bcb764e81364df4c492083a20154?context=explore)
+- We will be using latest at the time `5.0` or `8.0` [Latest to the docker hub.](https://hub.docker.com/layers/library/mongo/8.0/images/sha256-25c45597712d8f37915a52a172ce927ab197bcb764e81364df4c492083a20154?context=explore)
 
 <img src="labels.JPG" alt="alt text" width="700">
 
@@ -1138,7 +1141,7 @@ data:
     - Example. `app: nginx`.
 
 -  `replicas: 1` how many replicas we want from this deployment.
-    - For database we don't want use **deployment**, we want **stateful set**.
+    - For database, we don't want to use **deployment**, we want **stateful set**.
 
 <img src="serviceConfiguration.JPG" alt="alt text" width="700">
 
@@ -1312,12 +1315,29 @@ spec:
 
 <img src="differentComponentsInTheCluster.PNG" alt="alt text" width="500">
 
+- For **ConfigMap** and **Secret** we need to use different commands.
+    - `kubectl get configmap`.  
+    - `kubectl get secret`.
 
+<img src="describeCommand.PNG" alt="alt text" width="500">
 
+- Example of using this commands for **service** `kubectl describe service webapp-service`.
 
+<img src="viewingLogsOfTheContianer.PNG" alt="alt text" width="500">
 
+1. We can check logs from specific **pod**.
 
+- Delete `kubectl delete deployments --all`.
+
+- To get help. `kubectl --help`.
+
+- Which IP address we can access this service?
+
+<img src="gettingIP.PNG" alt="alt text" width="500">
+
+1. We can access this from **cluster** IP address.
+    - We can use `minikube ip`.
 
 # Congrats! You made it to the end.
 
-- Todo
+- Finish.
